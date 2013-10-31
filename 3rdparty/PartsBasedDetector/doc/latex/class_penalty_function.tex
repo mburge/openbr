@@ -1,0 +1,110 @@
+\hypertarget{class_penalty_function}{\section{Penalty\-Function Class Reference}
+\label{class_penalty_function}\index{Penalty\-Function@{Penalty\-Function}}
+}
+
+
+an interface for penalty functions to be passed to \hyperlink{class_distance_transform}{Distance\-Transform}  
+
+
+
+
+{\ttfamily \#include $<$Distance\-Transform.\-hpp$>$}
+
+Inheritance diagram for Penalty\-Function\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_penalty_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{class_penalty_function_a944230ce310515b1fe10972388c00042}{operator()} (const int x0, const int x1, const double y0, const double y1) const =0
+\begin{DoxyCompactList}\small\item\em intersection operator \end{DoxyCompactList}\item 
+virtual double \hyperlink{class_penalty_function_ad1f2cdbcfc85d0eaf3b734cafce60c48}{operator()} (const int x, const double y) const =0
+\begin{DoxyCompactList}\small\item\em lower-\/envelope operator \end{DoxyCompactList}\item 
+virtual \hyperlink{class_penalty_function_ac97741baf27aa9e506f430338f460498}{$\sim$\-Penalty\-Function} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+an interface for penalty functions to be passed to \hyperlink{class_distance_transform}{Distance\-Transform} 
+
+This penalty function interface defines the methods required by a function to be used in \hyperlink{class_distance_transform}{Distance\-Transform}. The function must be convex, so that the intersection between two such functions upholds a set of invariants. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_penalty_function_ac97741baf27aa9e506f430338f460498}{\index{Penalty\-Function@{Penalty\-Function}!$\sim$\-Penalty\-Function@{$\sim$\-Penalty\-Function}}
+\index{$\sim$\-Penalty\-Function@{$\sim$\-Penalty\-Function}!PenaltyFunction@{Penalty\-Function}}
+\subsubsection[{$\sim$\-Penalty\-Function}]{\setlength{\rightskip}{0pt plus 5cm}virtual Penalty\-Function\-::$\sim$\-Penalty\-Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_penalty_function_ac97741baf27aa9e506f430338f460498}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_penalty_function_a944230ce310515b1fe10972388c00042}{\index{Penalty\-Function@{Penalty\-Function}!operator()@{operator()}}
+\index{operator()@{operator()}!PenaltyFunction@{Penalty\-Function}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Penalty\-Function\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{x0, }
+\item[{const int}]{x1, }
+\item[{const double}]{y0, }
+\item[{const double}]{y1}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_penalty_function_a944230ce310515b1fe10972388c00042}
+
+
+intersection operator 
+
+The intersection operator is used to find the height of intersection between two offset penalty functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & the location of the first function \\
+\hline
+{\em x1} & the location of the second function \\
+\hline
+{\em y0} & the height of the underlying sampled function at x0 \\
+\hline
+{\em y1} & the height of the underlying sampled function at x1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height of the point of intersection 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_quadratic_ad074fa92b51e0590f6621b60ac01219a}{Quadratic}.
+
+\hypertarget{class_penalty_function_ad1f2cdbcfc85d0eaf3b734cafce60c48}{\index{Penalty\-Function@{Penalty\-Function}!operator()@{operator()}}
+\index{operator()@{operator()}!PenaltyFunction@{Penalty\-Function}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Penalty\-Function\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const double}]{y}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_penalty_function_ad1f2cdbcfc85d0eaf3b734cafce60c48}
+
+
+lower-\/envelope operator 
+
+given the pixel location of the lower envelope, calculate the true function height at that point 
+\begin{DoxyParams}{Parameters}
+{\em x} & the lower envelope's location on the function \\
+\hline
+{\em y} & the height of the underlying sampled point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_quadratic_ae1f3f6d71209aafe6bb1636a8c17489c}{Quadratic}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_distance_transform_8hpp}{Distance\-Transform.\-hpp}\end{DoxyCompactItemize}

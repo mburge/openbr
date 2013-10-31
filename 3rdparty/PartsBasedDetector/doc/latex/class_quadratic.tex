@@ -1,0 +1,139 @@
+\hypertarget{class_quadratic}{\section{Quadratic Class Reference}
+\label{class_quadratic}\index{Quadratic@{Quadratic}}
+}
+
+
+quadratic penalty function  
+
+
+
+
+{\ttfamily \#include $<$Distance\-Transform.\-hpp$>$}
+
+Inheritance diagram for Quadratic\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_quadratic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_quadratic_aa5d5e8e58a9d0aaf332e6b8b879430b8}{Quadratic} (double \-\_\-a, double \-\_\-b)
+\item 
+double \hyperlink{class_quadratic_ad074fa92b51e0590f6621b60ac01219a}{operator()} (const int x0, const int x1, const double y0, const double y1) const 
+\begin{DoxyCompactList}\small\item\em intersection operator \end{DoxyCompactList}\item 
+double \hyperlink{class_quadratic_ae1f3f6d71209aafe6bb1636a8c17489c}{operator()} (const int x, const double y) const 
+\begin{DoxyCompactList}\small\item\em lower-\/envelope operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+double const \hyperlink{class_quadratic_a3784ebac36b04b9195d44d6d5bc8933a}{a}
+\item 
+double const \hyperlink{class_quadratic_a1df1154ac27afe4533b5b695831ed23a}{b}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_quadratic_a0fd7e9cc0ce3028a7db656ec0cb8f84f}{square} (int x) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+quadratic penalty function 
+
+This class implements a Euclidean distance penalty function which manifests as a quadratic function 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_quadratic_aa5d5e8e58a9d0aaf332e6b8b879430b8}{\index{Quadratic@{Quadratic}!Quadratic@{Quadratic}}
+\index{Quadratic@{Quadratic}!Quadratic@{Quadratic}}
+\subsubsection[{Quadratic}]{\setlength{\rightskip}{0pt plus 5cm}Quadratic\-::\-Quadratic (
+\begin{DoxyParamCaption}
+\item[{double}]{\-\_\-a, }
+\item[{double}]{\-\_\-b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_quadratic_aa5d5e8e58a9d0aaf332e6b8b879430b8}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_quadratic_ad074fa92b51e0590f6621b60ac01219a}{\index{Quadratic@{Quadratic}!operator()@{operator()}}
+\index{operator()@{operator()}!Quadratic@{Quadratic}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}double Quadratic\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{x0, }
+\item[{const int}]{x1, }
+\item[{const double}]{y0, }
+\item[{const double}]{y1}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_quadratic_ad074fa92b51e0590f6621b60ac01219a}
+
+
+intersection operator 
+
+The intersection operator is used to find the height of intersection between two offset penalty functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & the location of the first function \\
+\hline
+{\em x1} & the location of the second function \\
+\hline
+{\em y0} & the height of the underlying sampled function at x0 \\
+\hline
+{\em y1} & the height of the underlying sampled function at x1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height of the point of intersection 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_penalty_function_a944230ce310515b1fe10972388c00042}{Penalty\-Function}.
+
+\hypertarget{class_quadratic_ae1f3f6d71209aafe6bb1636a8c17489c}{\index{Quadratic@{Quadratic}!operator()@{operator()}}
+\index{operator()@{operator()}!Quadratic@{Quadratic}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}double Quadratic\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const double}]{y}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_quadratic_ae1f3f6d71209aafe6bb1636a8c17489c}
+
+
+lower-\/envelope operator 
+
+given the pixel location of the lower envelope, calculate the true function height at that point 
+\begin{DoxyParams}{Parameters}
+{\em x} & the lower envelope's location on the function \\
+\hline
+{\em y} & the height of the underlying sampled point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_penalty_function_ad1f2cdbcfc85d0eaf3b734cafce60c48}{Penalty\-Function}.
+
+\hypertarget{class_quadratic_a0fd7e9cc0ce3028a7db656ec0cb8f84f}{\index{Quadratic@{Quadratic}!square@{square}}
+\index{square@{square}!Quadratic@{Quadratic}}
+\subsubsection[{square}]{\setlength{\rightskip}{0pt plus 5cm}int Quadratic\-::square (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{class_quadratic_a0fd7e9cc0ce3028a7db656ec0cb8f84f}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_quadratic_a3784ebac36b04b9195d44d6d5bc8933a}{\index{Quadratic@{Quadratic}!a@{a}}
+\index{a@{a}!Quadratic@{Quadratic}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}double const Quadratic\-::a}}\label{class_quadratic_a3784ebac36b04b9195d44d6d5bc8933a}
+\hypertarget{class_quadratic_a1df1154ac27afe4533b5b695831ed23a}{\index{Quadratic@{Quadratic}!b@{b}}
+\index{b@{b}!Quadratic@{Quadratic}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}double const Quadratic\-::b}}\label{class_quadratic_a1df1154ac27afe4533b5b695831ed23a}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_distance_transform_8hpp}{Distance\-Transform.\-hpp}\end{DoxyCompactItemize}

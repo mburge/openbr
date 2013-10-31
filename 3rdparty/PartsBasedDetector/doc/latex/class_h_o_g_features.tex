@@ -1,0 +1,279 @@
+\hypertarget{class_h_o_g_features}{\section{H\-O\-G\-Features$<$ T $>$ Class Template Reference}
+\label{class_h_o_g_features}\index{H\-O\-G\-Features$<$ T $>$@{H\-O\-G\-Features$<$ T $>$}}
+}
+
+
+Implementation of \hyperlink{class_i_features}{I\-Features} interface using H\-O\-G.  
+
+
+
+
+{\ttfamily \#include $<$H\-O\-G\-Features.\-hpp$>$}
+
+Inheritance diagram for H\-O\-G\-Features$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_h_o_g_features}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_h_o_g_features_a323944dc2065bfb4d7b83bac6ea0ba69}{H\-O\-G\-Features} ()
+\item 
+\hyperlink{class_h_o_g_features_aac660f7db27da50fc026e6e25b374b5a}{H\-O\-G\-Features} (size\-\_\-t \hyperlink{class_h_o_g_features_a0b75015646ceac02ba250e5af86245d4}{binsize}, size\-\_\-t \hyperlink{class_h_o_g_features_a2ea95a95f6d79af3344502b45e1cb7c5}{nscales}, size\-\_\-t flen, size\-\_\-t norient)
+\item 
+virtual \hyperlink{class_h_o_g_features_a062d1cfbb82dbd2829e844a937490509}{$\sim$\-H\-O\-G\-Features} ()
+\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_a0b75015646ceac02ba250e5af86245d4}{binsize} (void) const 
+\begin{DoxyCompactList}\small\item\em retrieve the spatial binning size (1 if not relevant) \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_a2ea95a95f6d79af3344502b45e1cb7c5}{nscales} (void) const 
+\begin{DoxyCompactList}\small\item\em retrieve the number of scales the features are calculated over \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_h_o_g_features_ad9668fda860881c676e1d1bd70adc18c}{scales} (void) const 
+\begin{DoxyCompactList}\small\item\em the vector of scales \end{DoxyCompactList}\item 
+void \hyperlink{class_h_o_g_features_a509372c4e652c3fc97f2d2be75fecd4d}{pyramid} (const cv\-::\-Mat \&im, \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&pyrafeatures)
+\begin{DoxyCompactList}\small\item\em Calculate features at multiple scales. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename I\-T $>$ }\\void \hyperlink{class_h_o_g_features_a0cabf74792b44e23e3dfd2c388b12036}{features} (const Mat \&imm, Mat \&featm) const 
+\begin{DoxyCompactList}\small\item\em compute the H\-O\-G features for an image \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_h_o_g_features_aef691ef9b65758f54b5b18dc496544b4}{boundary\-Occlusion\-Feature} (cv\-::\-Mat \&feature, const int flen, const int padsize)
+\begin{DoxyCompactList}\small\item\em add ones to the final padded pixel in each 3\-D feature map \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename I\-T $>$ }\\void \hyperlink{class_h_o_g_features_a1283b0cdf821061a4195de479e854199}{features} (const cv\-::\-Mat \&im, cv\-::\-Mat \&feature) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_afd93266461d3389e4c61a9c06fc81f4f}{binsize\-\_\-}
+\begin{DoxyCompactList}\small\item\em the spatial binning size \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_a46cde43950d00f33de7d11cd8a8da5bf}{nscales\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of scales to compute features at \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_a8cf4e36a70e13230efbe8abe97928748}{flen\-\_\-}
+\begin{DoxyCompactList}\small\item\em the length of the feature at each bin (histogram size) \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_a2c2f06c85eed3a2b2f93574116b961f7}{norient\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of orientations to bin \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_h_o_g_features_a27490a8c33c7ffbfdeedafc5af0ad544}{scales\-\_\-}
+\begin{DoxyCompactList}\small\item\em the scales of the features \end{DoxyCompactList}\item 
+float \hyperlink{class_h_o_g_features_a45b232ca94e93b4f30d342374e62578f}{sfactor\-\_\-}
+\begin{DoxyCompactList}\small\item\em the scaling factor between successive levels in the pyramid \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_h_o_g_features_aaa063fbfe2ce734ee08a10d7292cfb54}{interval\-\_\-}
+\begin{DoxyCompactList}\small\item\em the interval between half resolution scales \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class H\-O\-G\-Features$<$ T $>$}
+
+Implementation of \hyperlink{class_i_features}{I\-Features} interface using H\-O\-G. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_h_o_g_features_a323944dc2065bfb4d7b83bac6ea0ba69}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!H\-O\-G\-Features@{H\-O\-G\-Features}}
+\index{H\-O\-G\-Features@{H\-O\-G\-Features}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{H\-O\-G\-Features}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf H\-O\-G\-Features}$<$ T $>$\-::{\bf H\-O\-G\-Features} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_h_o_g_features_a323944dc2065bfb4d7b83bac6ea0ba69}
+\hypertarget{class_h_o_g_features_aac660f7db27da50fc026e6e25b374b5a}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!H\-O\-G\-Features@{H\-O\-G\-Features}}
+\index{H\-O\-G\-Features@{H\-O\-G\-Features}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{H\-O\-G\-Features}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf H\-O\-G\-Features}$<$ T $>$\-::{\bf H\-O\-G\-Features} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{binsize, }
+\item[{size\-\_\-t}]{nscales, }
+\item[{size\-\_\-t}]{flen, }
+\item[{size\-\_\-t}]{norient}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_h_o_g_features_aac660f7db27da50fc026e6e25b374b5a}
+\hypertarget{class_h_o_g_features_a062d1cfbb82dbd2829e844a937490509}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!$\sim$\-H\-O\-G\-Features@{$\sim$\-H\-O\-G\-Features}}
+\index{$\sim$\-H\-O\-G\-Features@{$\sim$\-H\-O\-G\-Features}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{$\sim$\-H\-O\-G\-Features}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf H\-O\-G\-Features}$<$ T $>$\-::$\sim${\bf H\-O\-G\-Features} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_h_o_g_features_a062d1cfbb82dbd2829e844a937490509}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_h_o_g_features_a0b75015646ceac02ba250e5af86245d4}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!binsize@{binsize}}
+\index{binsize@{binsize}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{binsize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::binsize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_h_o_g_features_a0b75015646ceac02ba250e5af86245d4}
+
+
+retrieve the spatial binning size (1 if not relevant) 
+
+
+
+Implements \hyperlink{class_i_features_a79f6861190d7c2754d560c6c10baa787}{I\-Features}.
+
+\hypertarget{class_h_o_g_features_aef691ef9b65758f54b5b18dc496544b4}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!boundary\-Occlusion\-Feature@{boundary\-Occlusion\-Feature}}
+\index{boundary\-Occlusion\-Feature@{boundary\-Occlusion\-Feature}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{boundary\-Occlusion\-Feature}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf H\-O\-G\-Features}$<$ T $>$\-::boundary\-Occlusion\-Feature (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Mat \&}]{feature, }
+\item[{const int}]{flen, }
+\item[{const int}]{padsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_aef691ef9b65758f54b5b18dc496544b4}
+
+
+add ones to the final padded pixel in each 3\-D feature map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em feature} & the feature map \\
+\hline
+{\em flen} & the length of the feature \\
+\hline
+{\em padsize} & the amount of padding that was applied (equally to all dimensions) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_h_o_g_features_a1283b0cdf821061a4195de479e854199}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!features@{features}}
+\index{features@{features}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{features}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename I\-T $>$ void {\bf H\-O\-G\-Features}$<$ T $>$\-::features (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{cv\-::\-Mat \&}]{feature}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a1283b0cdf821061a4195de479e854199}
+\hypertarget{class_h_o_g_features_a0cabf74792b44e23e3dfd2c388b12036}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!features@{features}}
+\index{features@{features}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{features}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename I\-T $>$ void {\bf H\-O\-G\-Features}$<$ T $>$\-::features (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{imm, }
+\item[{Mat \&}]{featm}
+\end{DoxyParamCaption}
+) const}}\label{class_h_o_g_features_a0cabf74792b44e23e3dfd2c388b12036}
+
+
+compute the H\-O\-G features for an image 
+
+This method computes the H\-O\-G features for an image, given the binsize\-\_\- and flen\-\_\- class members. The output is effectively a 3\-D matrix (i,j,k) that has been flattened to a 2\-D (i,j$\ast$k) matrix for faster processing. The (i,j) dimensions represent the resultant spatial size of the response (ie im.\-size() / binsize\-\_\-) and the (k) dimension represents the histogram weights (length flen\-\_\-)
+
+The function supports multithreading via Open\-M\-P
+
+
+\begin{DoxyParams}{Parameters}
+{\em imm} & the input image (must be color of type C\-V\-\_\-8\-U\-C3) \\
+\hline
+{\em featm} & the H\-O\-G features as a 2\-D matrix \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_h_o_g_features_a2ea95a95f6d79af3344502b45e1cb7c5}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!nscales@{nscales}}
+\index{nscales@{nscales}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{nscales}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::nscales (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_h_o_g_features_a2ea95a95f6d79af3344502b45e1cb7c5}
+
+
+retrieve the number of scales the features are calculated over 
+
+
+
+Implements \hyperlink{class_i_features_abf8d0bf5f66e7b3188ca73b5c9e48a1f}{I\-Features}.
+
+\hypertarget{class_h_o_g_features_a509372c4e652c3fc97f2d2be75fecd4d}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!pyramid@{pyramid}}
+\index{pyramid@{pyramid}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{pyramid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf H\-O\-G\-Features}$<$ T $>$\-::pyramid (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{{\bf vector\-Mat} \&}]{pyrafeatures}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_h_o_g_features_a509372c4e652c3fc97f2d2be75fecd4d}
+
+
+Calculate features at multiple scales. 
+
+Features are calculated first at native resolution, then progressively downsampled to coarser spatial resolutions
+
+This function supports multithreading via Open\-M\-P
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & the input image at native resolution \\
+\hline
+{\em pyrafeatures} & the pyramid of features, fine to coarse, each calculated via \hyperlink{class_h_o_g_features_a1283b0cdf821061a4195de479e854199}{features()} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_features_a0cd270503671145fae965c8d9fedc91a}{I\-Features}.
+
+\hypertarget{class_h_o_g_features_ad9668fda860881c676e1d1bd70adc18c}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!scales@{scales}}
+\index{scales@{scales}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{scales}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf vectorf} {\bf H\-O\-G\-Features}$<$ T $>$\-::scales (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_h_o_g_features_ad9668fda860881c676e1d1bd70adc18c}
+
+
+the vector of scales 
+
+the vector of scales, 1 indicating the native image resolution, values lower than 1 indicating downsampled images, and values greater than 1 indicating hallucinated resolutions 
+
+Implements \hyperlink{class_i_features_ad02aea9fd29e438d25e1c7d68c508b9e}{I\-Features}.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_h_o_g_features_afd93266461d3389e4c61a9c06fc81f4f}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!binsize\-\_\-@{binsize\-\_\-}}
+\index{binsize\-\_\-@{binsize\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{binsize\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::binsize\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_afd93266461d3389e4c61a9c06fc81f4f}
+
+
+the spatial binning size 
+
+\hypertarget{class_h_o_g_features_a8cf4e36a70e13230efbe8abe97928748}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!flen\-\_\-@{flen\-\_\-}}
+\index{flen\-\_\-@{flen\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{flen\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::flen\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a8cf4e36a70e13230efbe8abe97928748}
+
+
+the length of the feature at each bin (histogram size) 
+
+\hypertarget{class_h_o_g_features_aaa063fbfe2ce734ee08a10d7292cfb54}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!interval\-\_\-@{interval\-\_\-}}
+\index{interval\-\_\-@{interval\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{interval\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::interval\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_aaa063fbfe2ce734ee08a10d7292cfb54}
+
+
+the interval between half resolution scales 
+
+\hypertarget{class_h_o_g_features_a2c2f06c85eed3a2b2f93574116b961f7}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!norient\-\_\-@{norient\-\_\-}}
+\index{norient\-\_\-@{norient\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{norient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::norient\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a2c2f06c85eed3a2b2f93574116b961f7}
+
+
+the number of orientations to bin 
+
+\hypertarget{class_h_o_g_features_a46cde43950d00f33de7d11cd8a8da5bf}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!nscales\-\_\-@{nscales\-\_\-}}
+\index{nscales\-\_\-@{nscales\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{nscales\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf H\-O\-G\-Features}$<$ T $>$\-::nscales\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a46cde43950d00f33de7d11cd8a8da5bf}
+
+
+the number of scales to compute features at 
+
+\hypertarget{class_h_o_g_features_a27490a8c33c7ffbfdeedafc5af0ad544}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!scales\-\_\-@{scales\-\_\-}}
+\index{scales\-\_\-@{scales\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{scales\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf vectorf} {\bf H\-O\-G\-Features}$<$ T $>$\-::scales\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a27490a8c33c7ffbfdeedafc5af0ad544}
+
+
+the scales of the features 
+
+\hypertarget{class_h_o_g_features_a45b232ca94e93b4f30d342374e62578f}{\index{H\-O\-G\-Features@{H\-O\-G\-Features}!sfactor\-\_\-@{sfactor\-\_\-}}
+\index{sfactor\-\_\-@{sfactor\-\_\-}!HOGFeatures@{H\-O\-G\-Features}}
+\subsubsection[{sfactor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ float {\bf H\-O\-G\-Features}$<$ T $>$\-::sfactor\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_o_g_features_a45b232ca94e93b4f30d342374e62578f}
+
+
+the scaling factor between successive levels in the pyramid 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_h_o_g_features_8hpp}{H\-O\-G\-Features.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_h_o_g_features_8cpp}{H\-O\-G\-Features.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,163 @@
+\hypertarget{class_spatial_convolution_engine}{\section{Spatial\-Convolution\-Engine Class Reference}
+\label{class_spatial_convolution_engine}\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}}
+}
+
+
+{\ttfamily \#include $<$Spatial\-Convolution\-Engine.\-hpp$>$}
+
+Inheritance diagram for Spatial\-Convolution\-Engine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spatial_convolution_engine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_spatial_convolution_engine_a934e9613ba487297befd6e064bbd5d7a}{Spatial\-Convolution\-Engine} (int type, size\-\_\-t flen)
+\item 
+virtual \hyperlink{class_spatial_convolution_engine_a07b28be0c28a1c47bc6f2a7459155802}{$\sim$\-Spatial\-Convolution\-Engine} ()
+\item 
+virtual void \hyperlink{class_spatial_convolution_engine_ad27aad7b65dfa3ec6a617eed96c01d9c}{set\-Filters} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filters)
+\begin{DoxyCompactList}\small\item\em set the filters \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_spatial_convolution_engine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&responses)
+\begin{DoxyCompactList}\small\item\em Calculate the responses of a set of features to a set of filter experts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_spatial_convolution_engine_a3c31cd8797e4c99ccf68dfa558319750}{convolve} (const cv\-::\-Mat \&feature, \hyperlink{types_8hpp_a429d786862fa9bc087b66651599c66dd}{vector\-Filter\-Engine} \&filter, cv\-::\-Mat \&\hyperlink{class_spatial_convolution_engine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{pdf}, const size\-\_\-t stride)
+\begin{DoxyCompactList}\small\item\em Convolve two matrices, with a stride of greater than one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_spatial_convolution_engine_a913adab567840b6d1b2407c3b22ca108}{type\-\_\-}
+\begin{DoxyCompactList}\small\item\em the internally supported convolution type, taken from the filter type \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_spatial_convolution_engine_a5d58b30ec6846ef7ccf98f980d4fc957}{flen\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of layers to each filter \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a3ce0f1abc3fabcd40ad0ea8621d0d552}{vector2\-D\-Filter\-Engine} \hyperlink{class_spatial_convolution_engine_aec615ebfbedc8b7812481be1c2bcb1e5}{filters\-\_\-}
+\begin{DoxyCompactList}\small\item\em the internal representation of the filters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_spatial_convolution_engine_a934e9613ba487297befd6e064bbd5d7a}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}}
+\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{Spatial\-Convolution\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}Spatial\-Convolution\-Engine\-::\-Spatial\-Convolution\-Engine (
+\begin{DoxyParamCaption}
+\item[{int}]{type, }
+\item[{size\-\_\-t}]{flen}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_convolution_engine_a934e9613ba487297befd6e064bbd5d7a}
+\hypertarget{class_spatial_convolution_engine_a07b28be0c28a1c47bc6f2a7459155802}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!$\sim$\-Spatial\-Convolution\-Engine@{$\sim$\-Spatial\-Convolution\-Engine}}
+\index{$\sim$\-Spatial\-Convolution\-Engine@{$\sim$\-Spatial\-Convolution\-Engine}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{$\sim$\-Spatial\-Convolution\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}Spatial\-Convolution\-Engine\-::$\sim$\-Spatial\-Convolution\-Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spatial_convolution_engine_a07b28be0c28a1c47bc6f2a7459155802}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_spatial_convolution_engine_a3c31cd8797e4c99ccf68dfa558319750}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!convolve@{convolve}}
+\index{convolve@{convolve}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{convolve}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Convolution\-Engine\-::convolve (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{feature, }
+\item[{{\bf vector\-Filter\-Engine} \&}]{filter, }
+\item[{cv\-::\-Mat \&}]{pdf, }
+\item[{const size\-\_\-t}]{stride}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_spatial_convolution_engine_a3c31cd8797e4c99ccf68dfa558319750}
+
+
+Convolve two matrices, with a stride of greater than one. 
+
+This is a specialized 2\-D convolution algorithm with a stride of greater than one. It is designed to convolve a filter with a feature, where at each pixel an S\-V\-M must be evaluated (leading to a stride of S\-V\-M weight length). The convolution can be thought of as flattened a 2.\-5\-D convolution where the (i,j) dimension is the spatial plane and the (k) dimension is the S\-V\-M weights of the pixels.
+
+The function supports multithreading via Open\-M\-P
+
+
+\begin{DoxyParams}{Parameters}
+{\em feature} & the feature matrix \\
+\hline
+{\em filter} & the filter (S\-V\-M) \\
+\hline
+{\em pdf} & the response to return \\
+\hline
+{\em stride} & the S\-V\-M weight length \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_spatial_convolution_engine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!pdf@{pdf}}
+\index{pdf@{pdf}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{pdf}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Convolution\-Engine\-::pdf (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{features, }
+\item[{{\bf vector2\-D\-Mat} \&}]{responses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spatial_convolution_engine_a6db3b5e9428ee74e1b4e9e7f7111cad5}
+
+
+Calculate the responses of a set of features to a set of filter experts. 
+
+A response represents the likelihood of the part appearing at each location of the feature map. \hyperlink{class_parts}{Parts} are support vector machines (S\-V\-Ms) represented as filters. The convolution of a filter with a feature produces a probability density function (pdf) of part location 
+\begin{DoxyParams}{Parameters}
+{\em features} & the input features (at different scales, and by extension, size) \\
+\hline
+{\em responses} & the vector of responses (pdfs) to return \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}{I\-Convolution\-Engine}.
+
+\hypertarget{class_spatial_convolution_engine_ad27aad7b65dfa3ec6a617eed96c01d9c}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!set\-Filters@{set\-Filters}}
+\index{set\-Filters@{set\-Filters}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{set\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Convolution\-Engine\-::set\-Filters (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{filters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spatial_convolution_engine_ad27aad7b65dfa3ec6a617eed96c01d9c}
+
+
+set the filters 
+
+given a set of filters, split each filter channel into a plane, in preparation for convolution
+
+
+\begin{DoxyParams}{Parameters}
+{\em filters} & the filters \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_convolution_engine_a3570aae351b5fcb93bcd87a06c65ea0a}{I\-Convolution\-Engine}.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_spatial_convolution_engine_aec615ebfbedc8b7812481be1c2bcb1e5}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!filters\-\_\-@{filters\-\_\-}}
+\index{filters\-\_\-@{filters\-\_\-}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{filters\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-D\-Filter\-Engine} Spatial\-Convolution\-Engine\-::filters\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_spatial_convolution_engine_aec615ebfbedc8b7812481be1c2bcb1e5}
+
+
+the internal representation of the filters 
+
+\hypertarget{class_spatial_convolution_engine_a5d58b30ec6846ef7ccf98f980d4fc957}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!flen\-\_\-@{flen\-\_\-}}
+\index{flen\-\_\-@{flen\-\_\-}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{flen\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Spatial\-Convolution\-Engine\-::flen\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_spatial_convolution_engine_a5d58b30ec6846ef7ccf98f980d4fc957}
+
+
+the number of layers to each filter 
+
+\hypertarget{class_spatial_convolution_engine_a913adab567840b6d1b2407c3b22ca108}{\index{Spatial\-Convolution\-Engine@{Spatial\-Convolution\-Engine}!type\-\_\-@{type\-\_\-}}
+\index{type\-\_\-@{type\-\_\-}!SpatialConvolutionEngine@{Spatial\-Convolution\-Engine}}
+\subsubsection[{type\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Spatial\-Convolution\-Engine\-::type\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_spatial_convolution_engine_a913adab567840b6d1b2407c3b22ca108}
+
+
+the internally supported convolution type, taken from the filter type 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_spatial_convolution_engine_8hpp}{Spatial\-Convolution\-Engine.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_spatial_convolution_engine_8cpp}{Spatial\-Convolution\-Engine.\-cpp}\end{DoxyCompactItemize}

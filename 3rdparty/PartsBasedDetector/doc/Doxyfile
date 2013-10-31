@@ -1,0 +1,22 @@
+# --------------------
+# Project settings
+PROJECT_NAME            = PartsBasedDetector
+INPUT                   = /Users/m29474/Desktop/code/openbr/3rdparty/PartsBasedDetector/src /Users/m29474/Desktop/code/openbr/3rdparty/PartsBasedDetector/include
+OUTPUT_DIRECTORY        = /Users/m29474/Desktop/code/openbr/3rdparty/PartsBasedDetector/doc
+
+# --------------------
+# Output DOC types
+GENERATE_HTML           = YES
+GENERATE_LATEX          = YES
+USE_PDFLATEX            = YES
+
+# --------------------
+# INTERNAL
+QUIET                   = YES
+WARNINGS                = NO
+WARN_IF_UNDOCUMENTED    = NO
+PDF_HYPERLINKS          = YES
+OPTIMIZE_OUTPUT_FOR_C   = YES
+EXTRACT_ALL             = YES
+EXTRACT_PRIVATE         = YES
+EXTRACT_STATIC          = YES

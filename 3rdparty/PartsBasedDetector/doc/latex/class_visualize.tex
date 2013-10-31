@@ -1,0 +1,129 @@
+\hypertarget{class_visualize}{\section{Visualize Class Reference}
+\label{class_visualize}\index{Visualize@{Visualize}}
+}
+
+
+visualize detection candidates  
+
+
+
+
+{\ttfamily \#include $<$Visualize.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_visualize_a8d4163ad53518ec0c8a3eaec2bf2fe7b}{Visualize} ()
+\item 
+\hyperlink{class_visualize_aa4934674b915dc27dd262c5b5a6970b0}{Visualize} (std\-::string name)
+\item 
+virtual \hyperlink{class_visualize_a50a487bde1d6e77a2b16a2abb28dd066}{$\sim$\-Visualize} ()
+\item 
+void \hyperlink{class_visualize_ada4023e56a4a59e9b8ecd6c1d8c4c99b}{candidates} (const cv\-::\-Mat \&im, const \hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates, cv\-::\-Mat \&canvas, bool display\-\_\-confidence=false) const 
+\item 
+void \hyperlink{class_visualize_a6a24ad950e8e20d89a908cf87b709a94}{candidates} (const cv\-::\-Mat \&im, const \hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates, size\-\_\-t N, cv\-::\-Mat \&canvas, bool display\-\_\-confidence=false) const 
+\item 
+void \hyperlink{class_visualize_a49be21958241fe18358d999483d734e2}{candidates} (const cv\-::\-Mat \&im, const \hyperlink{class_candidate}{Candidate} \&candidate, cv\-::\-Mat \&canvas, bool display\-\_\-confidence=true) const 
+\item 
+void \hyperlink{class_visualize_a0464561197342e3a26d2f2bf317f3611}{image} (const cv\-::\-Mat \&im) const 
+\begin{DoxyCompactList}\small\item\em display the raw image with no overlay \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_visualize_a1407427a175d3a6098df7c300c27bd0d}{name\-\_\-}
+\begin{DoxyCompactList}\small\item\em the name of the Open\-C\-V window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+visualize detection candidates 
+
+visualize a collection of object detection candidates by rendering the input image to screen, and overlaying the detection bounding boxes of each of the parts, with optional confidence values 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_visualize_a8d4163ad53518ec0c8a3eaec2bf2fe7b}{\index{Visualize@{Visualize}!Visualize@{Visualize}}
+\index{Visualize@{Visualize}!Visualize@{Visualize}}
+\subsubsection[{Visualize}]{\setlength{\rightskip}{0pt plus 5cm}Visualize\-::\-Visualize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_visualize_a8d4163ad53518ec0c8a3eaec2bf2fe7b}
+\hypertarget{class_visualize_aa4934674b915dc27dd262c5b5a6970b0}{\index{Visualize@{Visualize}!Visualize@{Visualize}}
+\index{Visualize@{Visualize}!Visualize@{Visualize}}
+\subsubsection[{Visualize}]{\setlength{\rightskip}{0pt plus 5cm}Visualize\-::\-Visualize (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_visualize_aa4934674b915dc27dd262c5b5a6970b0}
+\hypertarget{class_visualize_a50a487bde1d6e77a2b16a2abb28dd066}{\index{Visualize@{Visualize}!$\sim$\-Visualize@{$\sim$\-Visualize}}
+\index{$\sim$\-Visualize@{$\sim$\-Visualize}!Visualize@{Visualize}}
+\subsubsection[{$\sim$\-Visualize}]{\setlength{\rightskip}{0pt plus 5cm}virtual Visualize\-::$\sim$\-Visualize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_visualize_a50a487bde1d6e77a2b16a2abb28dd066}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_visualize_ada4023e56a4a59e9b8ecd6c1d8c4c99b}{\index{Visualize@{Visualize}!candidates@{candidates}}
+\index{candidates@{candidates}!Visualize@{Visualize}}
+\subsubsection[{candidates}]{\setlength{\rightskip}{0pt plus 5cm}void Visualize\-::candidates (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const {\bf vector\-Candidate} \&}]{candidates, }
+\item[{cv\-::\-Mat \&}]{canvas, }
+\item[{bool}]{display\-\_\-confidence = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}}\label{class_visualize_ada4023e56a4a59e9b8ecd6c1d8c4c99b}
+\hypertarget{class_visualize_a6a24ad950e8e20d89a908cf87b709a94}{\index{Visualize@{Visualize}!candidates@{candidates}}
+\index{candidates@{candidates}!Visualize@{Visualize}}
+\subsubsection[{candidates}]{\setlength{\rightskip}{0pt plus 5cm}void Visualize\-::candidates (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const {\bf vector\-Candidate} \&}]{candidates, }
+\item[{size\-\_\-t}]{N, }
+\item[{cv\-::\-Mat \&}]{canvas, }
+\item[{bool}]{display\-\_\-confidence = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}}\label{class_visualize_a6a24ad950e8e20d89a908cf87b709a94}
+\hypertarget{class_visualize_a49be21958241fe18358d999483d734e2}{\index{Visualize@{Visualize}!candidates@{candidates}}
+\index{candidates@{candidates}!Visualize@{Visualize}}
+\subsubsection[{candidates}]{\setlength{\rightskip}{0pt plus 5cm}void Visualize\-::candidates (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const {\bf Candidate} \&}]{candidate, }
+\item[{cv\-::\-Mat \&}]{canvas, }
+\item[{bool}]{display\-\_\-confidence = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}}\label{class_visualize_a49be21958241fe18358d999483d734e2}
+\hypertarget{class_visualize_a0464561197342e3a26d2f2bf317f3611}{\index{Visualize@{Visualize}!image@{image}}
+\index{image@{image}!Visualize@{Visualize}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}void Visualize\-::image (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im}
+\end{DoxyParamCaption}
+) const}}\label{class_visualize_a0464561197342e3a26d2f2bf317f3611}
+
+
+display the raw image with no overlay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & the input image frame \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_visualize_a1407427a175d3a6098df7c300c27bd0d}{\index{Visualize@{Visualize}!name\-\_\-@{name\-\_\-}}
+\index{name\-\_\-@{name\-\_\-}!Visualize@{Visualize}}
+\subsubsection[{name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Visualize\-::name\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_visualize_a1407427a175d3a6098df7c300c27bd0d}
+
+
+the name of the Open\-C\-V window 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_visualize_8hpp}{Visualize.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_visualize_8cpp}{Visualize.\-cpp}\end{DoxyCompactItemize}

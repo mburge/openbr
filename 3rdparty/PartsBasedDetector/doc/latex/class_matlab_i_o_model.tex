@@ -1,0 +1,100 @@
+\hypertarget{class_matlab_i_o_model}{\section{Matlab\-I\-O\-Model Class Reference}
+\label{class_matlab_i_o_model}\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}}
+}
+
+
+\hyperlink{class_model}{Model} implementation with Matlab .Mat file deserialization.  
+
+
+
+
+{\ttfamily \#include $<$Matlab\-I\-O\-Model.\-hpp$>$}
+
+Inheritance diagram for Matlab\-I\-O\-Model\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_matlab_i_o_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matlab_i_o_model_ac4e387c6665a094f985b0ca0c37b1aee}{Matlab\-I\-O\-Model} ()
+\item 
+virtual \hyperlink{class_matlab_i_o_model_ac47ddec68b26241297c266b248c856d6}{$\sim$\-Matlab\-I\-O\-Model} ()
+\item 
+bool \hyperlink{class_matlab_i_o_model_a223538821bf7944a26433f7f99017f8b}{deserialize} (const std\-::string \&filename)
+\begin{DoxyCompactList}\small\item\em deserialize a Matlab .Mat file into memory \end{DoxyCompactList}\item 
+bool \hyperlink{class_matlab_i_o_model_ad67a1237af4a4e4d736599e6f2474252}{serialize} (const std\-::string \&filename) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_model}{Model} implementation with Matlab .Mat file deserialization. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_matlab_i_o_model_ac4e387c6665a094f985b0ca0c37b1aee}{\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}!Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}}
+\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}!MatlabIOModel@{Matlab\-I\-O\-Model}}
+\subsubsection[{Matlab\-I\-O\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Matlab\-I\-O\-Model\-::\-Matlab\-I\-O\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_matlab_i_o_model_ac4e387c6665a094f985b0ca0c37b1aee}
+\hypertarget{class_matlab_i_o_model_ac47ddec68b26241297c266b248c856d6}{\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}!$\sim$\-Matlab\-I\-O\-Model@{$\sim$\-Matlab\-I\-O\-Model}}
+\index{$\sim$\-Matlab\-I\-O\-Model@{$\sim$\-Matlab\-I\-O\-Model}!MatlabIOModel@{Matlab\-I\-O\-Model}}
+\subsubsection[{$\sim$\-Matlab\-I\-O\-Model}]{\setlength{\rightskip}{0pt plus 5cm}virtual Matlab\-I\-O\-Model\-::$\sim$\-Matlab\-I\-O\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_matlab_i_o_model_ac47ddec68b26241297c266b248c856d6}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_matlab_i_o_model_a223538821bf7944a26433f7f99017f8b}{\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!MatlabIOModel@{Matlab\-I\-O\-Model}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}bool Matlab\-I\-O\-Model\-::deserialize (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_matlab_i_o_model_a223538821bf7944a26433f7f99017f8b}
+
+
+deserialize a Matlab .Mat file into memory 
+
+deserialize a valid version 5 .Mat file using the underlying Matlab\-I\-O parser, and populate the model fields. If any of the fields do not exist, or a bad type cast is attempted, an exception will be thrown
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the path to the model file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the file was found, opened and verified to be a valid Matlab version 5 file 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em boost\-::bad\-\_\-any\-\_\-cast,exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_model_a2fc5d668c4930e8172e1a1460a8e6b46}{Model}.
+
+\hypertarget{class_matlab_i_o_model_ad67a1237af4a4e4d736599e6f2474252}{\index{Matlab\-I\-O\-Model@{Matlab\-I\-O\-Model}!serialize@{serialize}}
+\index{serialize@{serialize}!MatlabIOModel@{Matlab\-I\-O\-Model}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}bool Matlab\-I\-O\-Model\-::serialize (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_matlab_i_o_model_ad67a1237af4a4e4d736599e6f2474252}
+
+
+Implements \hyperlink{class_model_a952f21d72d87aa30387ea6e5c1d603fd}{Model}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_matlab_i_o_model_8hpp}{Matlab\-I\-O\-Model.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_matlab_i_o_model_8cpp}{Matlab\-I\-O\-Model.\-cpp}\end{DoxyCompactItemize}

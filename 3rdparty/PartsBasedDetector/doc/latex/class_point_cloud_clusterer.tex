@@ -1,0 +1,126 @@
+\hypertarget{class_point_cloud_clusterer}{\section{Point\-Cloud\-Clusterer$<$ Point\-Type $>$ Class Template Reference}
+\label{class_point_cloud_clusterer}\index{Point\-Cloud\-Clusterer$<$ Point\-Type $>$@{Point\-Cloud\-Clusterer$<$ Point\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$Point\-Cloud\-Clusterer.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef pcl\-::\-Point\-Cloud\\*
+$<$ Point\-Type $>$ \hyperlink{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}{Point\-Cloud}
+\item 
+typedef Point\-Cloud\-::\-Const\-Ptr \hyperlink{class_point_cloud_clusterer_a042579611b15a7ae275603b624df3968}{Point\-Cloud\-Const\-Ptr}
+\item 
+typedef boost\-::function\\*
+$<$ cv\-::\-Point3d(cv\-::\-Point)$>$ \hyperlink{class_point_cloud_clusterer_adc13c5f02a2a888f33eedbc33188f202}{Point\-Project\-Func}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_point_cloud_clusterer_add62f99dcb8932a59758ac974611fb3d}{compute\-Bounding\-Boxes} (const std\-::vector$<$ \hyperlink{class_candidate}{Candidate} $>$ \&candidates, const cv\-::\-Mat \&rgb, const cv\-::\-Mat \&depth, \hyperlink{class_point_cloud_clusterer_adc13c5f02a2a888f33eedbc33188f202}{Point\-Project\-Func} camera\-\_\-model\-\_\-projecter, const typename Point\-Cloud\-::\-Const\-Ptr cloud, std\-::vector$<$ \hyperlink{_rect3_8hpp_a05172c5a86161981edfe197f57415582}{Rect3d} $>$ \&bounding\-\_\-boxes, std\-::vector$<$ \hyperlink{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}{Point\-Cloud} $>$ \&parts\-\_\-centers)
+\begin{DoxyCompactList}\small\item\em this function computes the 3\-D bounding boxes around the candidates \end{DoxyCompactList}\item 
+static void \hyperlink{class_point_cloud_clusterer_a8c2ad76e5ddbea4277a03bd105f2ec9e}{cluster\-Objects} (const \hyperlink{class_point_cloud_clusterer_a042579611b15a7ae275603b624df3968}{Point\-Cloud\-Const\-Ptr} cloud, const std\-::vector$<$ \hyperlink{_rect3_8hpp_a05172c5a86161981edfe197f57415582}{Rect3d} $>$ \&bounding\-\_\-boxes, std\-::vector$<$ \hyperlink{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}{Point\-Cloud} $>$ \&object\-\_\-clusters, std\-::vector$<$ Point\-Type $>$ \&object\-\_\-centers)
+\begin{DoxyCompactList}\small\item\em this function uses the 3\-D bounding boxes to segment and extract a point cluster for each detected object \end{DoxyCompactList}\item 
+static void \hyperlink{class_point_cloud_clusterer_a262d27615d949a6923ca0b581dc59f1c}{organized\-Multiplane\-Segmentation} (const \hyperlink{class_point_cloud_clusterer_a042579611b15a7ae275603b624df3968}{Point\-Cloud\-Const\-Ptr} \&cloud, \hyperlink{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}{Point\-Cloud} \&cloud\-\_\-no\-\_\-plane)
+\begin{DoxyCompactList}\small\item\em this function removes planes from the (organized) input cloud \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!Point\-Cloud@{Point\-Cloud}}
+\index{Point\-Cloud@{Point\-Cloud}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ typedef pcl\-::\-Point\-Cloud$<$Point\-Type$>$ {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::{\bf Point\-Cloud}}}\label{class_point_cloud_clusterer_aeac82c7494ccf2580112ef55d7e30b39}
+\hypertarget{class_point_cloud_clusterer_a042579611b15a7ae275603b624df3968}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!Point\-Cloud\-Const\-Ptr@{Point\-Cloud\-Const\-Ptr}}
+\index{Point\-Cloud\-Const\-Ptr@{Point\-Cloud\-Const\-Ptr}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{Point\-Cloud\-Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ typedef Point\-Cloud\-::\-Const\-Ptr {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::{\bf Point\-Cloud\-Const\-Ptr}}}\label{class_point_cloud_clusterer_a042579611b15a7ae275603b624df3968}
+\hypertarget{class_point_cloud_clusterer_adc13c5f02a2a888f33eedbc33188f202}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!Point\-Project\-Func@{Point\-Project\-Func}}
+\index{Point\-Project\-Func@{Point\-Project\-Func}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{Point\-Project\-Func}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ typedef boost\-::function$<$cv\-::\-Point3d(cv\-::\-Point)$>$ {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::{\bf Point\-Project\-Func}}}\label{class_point_cloud_clusterer_adc13c5f02a2a888f33eedbc33188f202}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_point_cloud_clusterer_a8c2ad76e5ddbea4277a03bd105f2ec9e}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!cluster\-Objects@{cluster\-Objects}}
+\index{cluster\-Objects@{cluster\-Objects}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{cluster\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ void {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::cluster\-Objects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-Cloud\-Const\-Ptr}}]{cloud, }
+\item[{const std\-::vector$<$ {\bf Rect3d} $>$ \&}]{bounding\-\_\-boxes, }
+\item[{std\-::vector$<$ {\bf Point\-Cloud} $>$ \&}]{object\-\_\-clusters, }
+\item[{std\-::vector$<$ Point\-Type $>$ \&}]{object\-\_\-centers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_point_cloud_clusterer_a8c2ad76e5ddbea4277a03bd105f2ec9e}
+
+
+this function uses the 3\-D bounding boxes to segment and extract a point cluster for each detected object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & the input point cloud \\
+\hline
+{\em bounding\-\_\-boxes} & the 3\-D bunding boxes \\
+\hline
+{\em object\-\_\-clusters} & a vector of Point\-Clouds is returned, a cluster for each bounding box \\
+\hline
+{\em object\-\_\-centers} & the centroid of each cluster \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_point_cloud_clusterer_add62f99dcb8932a59758ac974611fb3d}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!compute\-Bounding\-Boxes@{compute\-Bounding\-Boxes}}
+\index{compute\-Bounding\-Boxes@{compute\-Bounding\-Boxes}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{compute\-Bounding\-Boxes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ void {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::compute\-Bounding\-Boxes (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ {\bf Candidate} $>$ \&}]{candidates, }
+\item[{const cv\-::\-Mat \&}]{rgb, }
+\item[{const cv\-::\-Mat \&}]{depth, }
+\item[{{\bf Point\-Project\-Func}}]{camera\-\_\-model\-\_\-projecter, }
+\item[{const typename Point\-Cloud\-::\-Const\-Ptr}]{cloud, }
+\item[{std\-::vector$<$ {\bf Rect3d} $>$ \&}]{bounding\-\_\-boxes, }
+\item[{std\-::vector$<$ {\bf Point\-Cloud} $>$ \&}]{parts\-\_\-centers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_point_cloud_clusterer_add62f99dcb8932a59758ac974611fb3d}
+
+
+this function computes the 3\-D bounding boxes around the candidates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em candidates} & the candidates returned by the parts based detector \\
+\hline
+{\em rgb} & the rgb image \\
+\hline
+{\em depth} & the depth image \\
+\hline
+{\em camera\-\_\-model\-\_\-projecter} & the function that projects the 2d pixel into a 3d ray \\
+\hline
+{\em cloud} & the pointcloud \\
+\hline
+{\em bounding\-\_\-boxes} & the 3\-D bounding boxes for each candidate \\
+\hline
+{\em parts\-\_\-centers} & a point cloud for each candidate, each point represents the center for a part \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_point_cloud_clusterer_a262d27615d949a6923ca0b581dc59f1c}{\index{Point\-Cloud\-Clusterer@{Point\-Cloud\-Clusterer}!organized\-Multiplane\-Segmentation@{organized\-Multiplane\-Segmentation}}
+\index{organized\-Multiplane\-Segmentation@{organized\-Multiplane\-Segmentation}!PointCloudClusterer@{Point\-Cloud\-Clusterer}}
+\subsubsection[{organized\-Multiplane\-Segmentation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-Type $>$ void {\bf Point\-Cloud\-Clusterer}$<$ Point\-Type $>$\-::organized\-Multiplane\-Segmentation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-Cloud\-Const\-Ptr} \&}]{cloud, }
+\item[{{\bf Point\-Cloud} \&}]{cloud\-\_\-no\-\_\-plane}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_point_cloud_clusterer_a262d27615d949a6923ca0b581dc59f1c}
+
+
+this function removes planes from the (organized) input cloud 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & the input point cloud \\
+\hline
+{\em cloud\-\_\-no\-\_\-plane} & the filtered input cloud (planes removed) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_point_cloud_clusterer_8h}{Point\-Cloud\-Clusterer.\-h}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_point_cloud_clusterer_8hpp}{Point\-Cloud\-Clusterer.\-hpp}\end{DoxyCompactItemize}

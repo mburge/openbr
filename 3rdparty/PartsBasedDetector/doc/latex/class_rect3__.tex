@@ -1,0 +1,388 @@
+\hypertarget{class_rect3__}{\section{Rect3\-\_\-$<$ T $>$ Class Template Reference}
+\label{class_rect3__}\index{Rect3\-\_\-$<$ T $>$@{Rect3\-\_\-$<$ T $>$}}
+}
+
+
+3\-D rectangle class This class implements a 3\-D rectangle which provides similar functionality to the Open\-C\-V Rect\-\_\- class, but in 3-\/space  
+
+
+
+
+{\ttfamily \#include $<$Rect3.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rect3___a5c3ceb93ece38ee7145436652670cef8}{Rect3\-\_\-} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{class_rect3___a5f055c2312c2426746e8c7421c11535f}{Rect3\-\_\-} (T \-\_\-x, T \-\_\-y, T \-\_\-z, T \-\_\-height, T \-\_\-width, T \-\_\-depth)
+\begin{DoxyCompactList}\small\item\em constructor with primitive arguments \end{DoxyCompactList}\item 
+\hyperlink{class_rect3___addad14c64f04aae61ab4ef7be23e72c4}{Rect3\-\_\-} (const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\hyperlink{class_rect3___a8ceab5818fcd871fc373437084a84157}{Rect3\-\_\-} (const cv\-::\-Point3\-\_\-$<$ T $>$ pt1, const cv\-::\-Point3\-\_\-$<$ T $>$ pt2)
+\begin{DoxyCompactList}\small\item\em constructor using points \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___a5f5849c81f0561292c78d7df6e68f569}{operator+} (const cv\-::\-Point3\-\_\-$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em equals operator \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___accafb3f3d3ddea87cab8ed9a274480dd}{operator-\/} (const cv\-::\-Point3\-\_\-$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em subtraction operator \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___a7b3e73a2456c26db0ba85efbf1eac087}{operator+=} (const cv\-::\-Point3\-\_\-$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em addition in-\/place \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___a3a626255017a7cef76e065c51ef1504f}{operator-\/=} (const cv\-::\-Point3\-\_\-$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em subtraction in-\/place \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___a24609371fde6d5c8383dbb210bb75b5e}{operator\&} (const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ r)
+\begin{DoxyCompactList}\small\item\em intersection operator \end{DoxyCompactList}\item 
+\hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \& \hyperlink{class_rect3___a0f988dcf6a9ad19243844abf4acba653}{operator$|$} (const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ r)
+\begin{DoxyCompactList}\small\item\em convex hull operator \end{DoxyCompactList}\item 
+\hyperlink{class_rect3___a4f49b82908b88ed545690bfff932ea30}{operator cv\-::\-Rect\-\_\-$<$ T $>$} ()
+\begin{DoxyCompactList}\small\item\em down-\/conversion to a Rect \end{DoxyCompactList}\item 
+cv\-::\-Point3\-\_\-$<$ T $>$ \hyperlink{class_rect3___a8df208aa3d316ea706a529db292d1a0f}{tl} () const 
+\begin{DoxyCompactList}\small\item\em the top left corner in 3-\/space \end{DoxyCompactList}\item 
+cv\-::\-Point3\-\_\-$<$ T $>$ \hyperlink{class_rect3___a253d895d86ec7718351f29ff3cd0cd27}{br} () const 
+\begin{DoxyCompactList}\small\item\em the bottom right corner in 3-\/space \end{DoxyCompactList}\item 
+T \hyperlink{class_rect3___a766842fae2533d47ccf9b7fb428670c8}{volume} () const 
+\begin{DoxyCompactList}\small\item\em the volume of the encapsulated area \end{DoxyCompactList}\item 
+bool \hyperlink{class_rect3___ad9928349a9a8bca8f98a1bf1cab676e9}{contains} (const cv\-::\-Point3\-\_\-$<$ T $>$ \&pt) const 
+\begin{DoxyCompactList}\small\item\em check whether the prism contains the 3\-D-\/point \end{DoxyCompactList}\item 
+cv\-::\-Point3\-\_\-$<$ T $>$ \hyperlink{class_rect3___addafb9e6380c9a3ffd4f394d311c59b6}{centroid} () const 
+\begin{DoxyCompactList}\small\item\em get the centroid of the prism \end{DoxyCompactList}\item 
+virtual \hyperlink{class_rect3___a297683142c5197991bfaabdb2305a37c}{$\sim$\-Rect3\-\_\-} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \hyperlink{class_rect3___a65f8ac50cb83bd238d0a20fe7f63fc31}{convex\-Hull} (const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r1, const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r2)
+\begin{DoxyCompactList}\small\item\em convex hull of two rectangles The rectangular convex hull is defined as the minimum bounding rectangle that completely encapsulates both rectangles (in 3-\/space) \end{DoxyCompactList}\item 
+static \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \hyperlink{class_rect3___af928b65e6d154f1d196725c18820ab2c}{convex\-Hull} (const std\-::vector$<$ \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ $>$ \&r)
+\begin{DoxyCompactList}\small\item\em convex hull of two rectangles The rectangular convex hull is defined as the minimum bounding rectangle that completely encapsulates both rectangles (in 3-\/space) \end{DoxyCompactList}\item 
+static \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \hyperlink{class_rect3___ade590c7c83be16b840539a2dede75f08}{intersection} (const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r1, const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r2)
+\begin{DoxyCompactList}\small\item\em find the intersection of two rectangular prisms in 3-\/space \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_rect3___a035f211c0c365a9dbd15436cb5448e31}{x}
+\item 
+T \hyperlink{class_rect3___ab2c61e4e318bc064eb8bb707b699cbb6}{y}
+\item 
+T \hyperlink{class_rect3___a99bae7d4f2bf0af6a3ffbfb0fa752b9e}{z}
+\item 
+T \hyperlink{class_rect3___a4f10fdcf15fe8cdb6b01a9b90d56ebe5}{height}
+\item 
+T \hyperlink{class_rect3___a780cbb24a81d6bbfff26c2ac6660beb8}{width}
+\item 
+T \hyperlink{class_rect3___a73850e016f7e8152e47d430239c47cc2}{depth}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_rect3___af7a3194527b2890e66a2677897434cd9}{operator$<$$<$} (std\-::ostream \&stream, const \hyperlink{class_rect3__}{Rect3\-\_\-}$<$ T $>$ \&r)
+\begin{DoxyCompactList}\small\item\em stream insertion operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Rect3\-\_\-$<$ T $>$}
+
+3\-D rectangle class This class implements a 3\-D rectangle which provides similar functionality to the Open\-C\-V Rect\-\_\- class, but in 3-\/space 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rect3___a5c3ceb93ece38ee7145436652670cef8}{\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3\-\_\-@{Rect3\-\_\-}}
+\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{Rect3\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::{\bf Rect3\-\_\-} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a5c3ceb93ece38ee7145436652670cef8}
+
+
+default constructor 
+
+\hypertarget{class_rect3___a5f055c2312c2426746e8c7421c11535f}{\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3\-\_\-@{Rect3\-\_\-}}
+\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{Rect3\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::{\bf Rect3\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{T}]{\-\_\-x, }
+\item[{T}]{\-\_\-y, }
+\item[{T}]{\-\_\-z, }
+\item[{T}]{\-\_\-height, }
+\item[{T}]{\-\_\-width, }
+\item[{T}]{\-\_\-depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a5f055c2312c2426746e8c7421c11535f}
+
+
+constructor with primitive arguments 
+
+\hypertarget{class_rect3___addad14c64f04aae61ab4ef7be23e72c4}{\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3\-\_\-@{Rect3\-\_\-}}
+\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{Rect3\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::{\bf Rect3\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___addad14c64f04aae61ab4ef7be23e72c4}
+
+
+copy constructor 
+
+\hypertarget{class_rect3___a8ceab5818fcd871fc373437084a84157}{\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3\-\_\-@{Rect3\-\_\-}}
+\index{Rect3\-\_\-@{Rect3\-\_\-}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{Rect3\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::{\bf Rect3\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$}]{pt1, }
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$}]{pt2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a8ceab5818fcd871fc373437084a84157}
+
+
+constructor using points 
+
+\hypertarget{class_rect3___a297683142c5197991bfaabdb2305a37c}{\index{Rect3\-\_\-@{Rect3\-\_\-}!$\sim$\-Rect3\-\_\-@{$\sim$\-Rect3\-\_\-}}
+\index{$\sim$\-Rect3\-\_\-@{$\sim$\-Rect3\-\_\-}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{$\sim$\-Rect3\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf Rect3\-\_\-}$<$ T $>$\-::$\sim${\bf Rect3\-\_\-} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_rect3___a297683142c5197991bfaabdb2305a37c}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_rect3___a253d895d86ec7718351f29ff3cd0cd27}{\index{Rect3\-\_\-@{Rect3\-\_\-}!br@{br}}
+\index{br@{br}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{br}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ cv\-::\-Point3\-\_\-$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::br (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a253d895d86ec7718351f29ff3cd0cd27}
+
+
+the bottom right corner in 3-\/space 
+
+\hypertarget{class_rect3___addafb9e6380c9a3ffd4f394d311c59b6}{\index{Rect3\-\_\-@{Rect3\-\_\-}!centroid@{centroid}}
+\index{centroid@{centroid}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{centroid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ cv\-::\-Point3\-\_\-$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::centroid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___addafb9e6380c9a3ffd4f394d311c59b6}
+
+
+get the centroid of the prism 
+
+\hypertarget{class_rect3___ad9928349a9a8bca8f98a1bf1cab676e9}{\index{Rect3\-\_\-@{Rect3\-\_\-}!contains@{contains}}
+\index{contains@{contains}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Rect3\-\_\-}$<$ T $>$\-::contains (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$ \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___ad9928349a9a8bca8f98a1bf1cab676e9}
+
+
+check whether the prism contains the 3\-D-\/point 
+
+\hypertarget{class_rect3___a65f8ac50cb83bd238d0a20fe7f63fc31}{\index{Rect3\-\_\-@{Rect3\-\_\-}!convex\-Hull@{convex\-Hull}}
+\index{convex\-Hull@{convex\-Hull}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{convex\-Hull}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static {\bf Rect3\-\_\-}$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::convex\-Hull (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r1, }
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_rect3___a65f8ac50cb83bd238d0a20fe7f63fc31}
+
+
+convex hull of two rectangles The rectangular convex hull is defined as the minimum bounding rectangle that completely encapsulates both rectangles (in 3-\/space) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & the first rectangular prism \\
+\hline
+{\em r2} & the second rectangular prism \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rectangular prism convex hull 
+\end{DoxyReturn}
+\hypertarget{class_rect3___af928b65e6d154f1d196725c18820ab2c}{\index{Rect3\-\_\-@{Rect3\-\_\-}!convex\-Hull@{convex\-Hull}}
+\index{convex\-Hull@{convex\-Hull}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{convex\-Hull}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static {\bf Rect3\-\_\-}$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::convex\-Hull (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ {\bf Rect3\-\_\-}$<$ T $>$ $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_rect3___af928b65e6d154f1d196725c18820ab2c}
+
+
+convex hull of two rectangles The rectangular convex hull is defined as the minimum bounding rectangle that completely encapsulates both rectangles (in 3-\/space) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & a std\-::vector of rectangular prisms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rectangular prism convex hull 
+\end{DoxyReturn}
+\hypertarget{class_rect3___ade590c7c83be16b840539a2dede75f08}{\index{Rect3\-\_\-@{Rect3\-\_\-}!intersection@{intersection}}
+\index{intersection@{intersection}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{intersection}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static {\bf Rect3\-\_\-}$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::intersection (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r1, }
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_rect3___ade590c7c83be16b840539a2dede75f08}
+
+
+find the intersection of two rectangular prisms in 3-\/space 
+
+The intersection is the largest volume occupied by both rectangles. If the rectangles do not overlap, the output \hyperlink{class_rect3__}{Rect3\-\_\-} is set to all zeros
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & the first rectangular prism \\
+\hline
+{\em r2} & the second rectangular prism \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a rectangular prism representing the intersection of r1 \& r2 
+\end{DoxyReturn}
+\hypertarget{class_rect3___a4f49b82908b88ed545690bfff932ea30}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator cv\-::\-Rect\-\_\-$<$ T $>$@{operator cv\-::\-Rect\-\_\-$<$ T $>$}}
+\index{operator cv\-::\-Rect\-\_\-$<$ T $>$@{operator cv\-::\-Rect\-\_\-$<$ T $>$}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator cv\-::\-Rect\-\_\-$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::operator cv\-::\-Rect\-\_\-$<$ T $>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a4f49b82908b88ed545690bfff932ea30}
+
+
+down-\/conversion to a Rect 
+
+\hypertarget{class_rect3___a24609371fde6d5c8383dbb210bb75b5e}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator\&}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator\& (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a24609371fde6d5c8383dbb210bb75b5e}
+
+
+intersection operator 
+
+\hypertarget{class_rect3___a5f5849c81f0561292c78d7df6e68f569}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator+@{operator+}}
+\index{operator+@{operator+}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a5f5849c81f0561292c78d7df6e68f569}
+
+
+equals operator 
+
+addition operator \hypertarget{class_rect3___a7b3e73a2456c26db0ba85efbf1eac087}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a7b3e73a2456c26db0ba85efbf1eac087}
+
+
+addition in-\/place 
+
+\hypertarget{class_rect3___accafb3f3d3ddea87cab8ed9a274480dd}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___accafb3f3d3ddea87cab8ed9a274480dd}
+
+
+subtraction operator 
+
+\hypertarget{class_rect3___a3a626255017a7cef76e065c51ef1504f}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Point3\-\_\-$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a3a626255017a7cef76e065c51ef1504f}
+
+
+subtraction in-\/place 
+
+\hypertarget{class_rect3___a0f988dcf6a9ad19243844abf4acba653}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator$|$@{operator$|$}}
+\index{operator$|$@{operator$|$}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator$|$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Rect3\-\_\-}$<$T$>$\& {\bf Rect3\-\_\-}$<$ T $>$\-::operator$|$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a0f988dcf6a9ad19243844abf4acba653}
+
+
+convex hull operator 
+
+\hypertarget{class_rect3___a8df208aa3d316ea706a529db292d1a0f}{\index{Rect3\-\_\-@{Rect3\-\_\-}!tl@{tl}}
+\index{tl@{tl}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{tl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ cv\-::\-Point3\-\_\-$<$T$>$ {\bf Rect3\-\_\-}$<$ T $>$\-::tl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a8df208aa3d316ea706a529db292d1a0f}
+
+
+the top left corner in 3-\/space 
+
+\hypertarget{class_rect3___a766842fae2533d47ccf9b7fb428670c8}{\index{Rect3\-\_\-@{Rect3\-\_\-}!volume@{volume}}
+\index{volume@{volume}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_rect3___a766842fae2533d47ccf9b7fb428670c8}
+
+
+the volume of the encapsulated area 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_rect3___af7a3194527b2890e66a2677897434cd9}{\index{Rect3\-\_\-@{Rect3\-\_\-}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{stream, }
+\item[{const {\bf Rect3\-\_\-}$<$ T $>$ \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_rect3___af7a3194527b2890e66a2677897434cd9}
+
+
+stream insertion operator 
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_rect3___a73850e016f7e8152e47d430239c47cc2}{\index{Rect3\-\_\-@{Rect3\-\_\-}!depth@{depth}}
+\index{depth@{depth}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::depth}}\label{class_rect3___a73850e016f7e8152e47d430239c47cc2}
+\hypertarget{class_rect3___a4f10fdcf15fe8cdb6b01a9b90d56ebe5}{\index{Rect3\-\_\-@{Rect3\-\_\-}!height@{height}}
+\index{height@{height}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::height}}\label{class_rect3___a4f10fdcf15fe8cdb6b01a9b90d56ebe5}
+\hypertarget{class_rect3___a780cbb24a81d6bbfff26c2ac6660beb8}{\index{Rect3\-\_\-@{Rect3\-\_\-}!width@{width}}
+\index{width@{width}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::width}}\label{class_rect3___a780cbb24a81d6bbfff26c2ac6660beb8}
+\hypertarget{class_rect3___a035f211c0c365a9dbd15436cb5448e31}{\index{Rect3\-\_\-@{Rect3\-\_\-}!x@{x}}
+\index{x@{x}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::x}}\label{class_rect3___a035f211c0c365a9dbd15436cb5448e31}
+\hypertarget{class_rect3___ab2c61e4e318bc064eb8bb707b699cbb6}{\index{Rect3\-\_\-@{Rect3\-\_\-}!y@{y}}
+\index{y@{y}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::y}}\label{class_rect3___ab2c61e4e318bc064eb8bb707b699cbb6}
+\hypertarget{class_rect3___a99bae7d4f2bf0af6a3ffbfb0fa752b9e}{\index{Rect3\-\_\-@{Rect3\-\_\-}!z@{z}}
+\index{z@{z}!Rect3_@{Rect3\-\_\-}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Rect3\-\_\-}$<$ T $>$\-::z}}\label{class_rect3___a99bae7d4f2bf0af6a3ffbfb0fa752b9e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_rect3_8hpp}{Rect3.\-hpp}\end{DoxyCompactItemize}

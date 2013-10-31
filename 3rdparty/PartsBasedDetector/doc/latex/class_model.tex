@@ -1,0 +1,454 @@
+\hypertarget{class_model}{\section{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+}
+
+
+Monolithic container class for storing model parameters.  
+
+
+
+
+{\ttfamily \#include $<$Model.\-hpp$>$}
+
+Inheritance diagram for Model\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_model_ae3b375de5f6df4faf74a95d64748e048}{Model} ()
+\item 
+virtual \hyperlink{class_model_af032d8433c87a0a3a431faf6563a1f03}{$\sim$\-Model} ()
+\item 
+\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \& \hyperlink{class_model_ad923232199aa30bb69436fd08ef01b6d}{filters} (void)
+\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \& \hyperlink{class_model_a66a09e10ef051d4c261546d4016b7d74}{filtersi} (void)
+\item 
+\hyperlink{types_8hpp_a94f2d563f3725231a6f684b4dce4f1ef}{vector2\-Df} \& \hyperlink{class_model_a2d471c6cb6ab4273963b986e21f91f82}{def} (void)
+\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \& \hyperlink{class_model_a68d158f45c15ca0417b97cc140c498c6}{defi} (void)
+\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \& \hyperlink{class_model_aad5223ba9a48a9d4301d004d11457006}{bias} (void)
+\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \& \hyperlink{class_model_a478f9460cf39e00f0d65c0afbecd8677}{biasi} (void)
+\item 
+\hyperlink{types_8hpp_ac468fcf6870d6563ac8fa3669845afcc}{vector\-Point} \& \hyperlink{class_model_a047262c3a9de203b9d67094128c483a5}{anchors} (void)
+\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \& \hyperlink{class_model_a35c8491baa7893180abf62f22be40499}{filterid} (void)
+\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \& \hyperlink{class_model_a4088cf71d411e0cbbef2eb7c0861b039}{biasid} (void)
+\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \& \hyperlink{class_model_a2efd0f976fb014b3267281fd79172921}{defid} (void)
+\item 
+\hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} \& \hyperlink{class_model_a2a44477641549a9c8ebecfff9221bda9}{parentid} (void)
+\item 
+std\-::string \hyperlink{class_model_aeae6527ff13db7724c53c942029d882d}{name} (void)
+\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \& \hyperlink{class_model_a65d5e15900bc329b42acc7ce57c45628}{conn} (void)
+\item 
+int \hyperlink{class_model_aadbe1db9da272e3c7925f14c10143360}{nparts} (void) const 
+\item 
+int \hyperlink{class_model_a86676b7fdc842393897b11ce8a7d7623}{nmixtures} (void) const 
+\item 
+float \hyperlink{class_model_a474739b5b87ebfc7342d10124dfd59b6}{thresh} (void) const 
+\item 
+int \hyperlink{class_model_a93d5e6030b6ea9ffe155b459d9e58585}{binsize} (void) const 
+\item 
+int \hyperlink{class_model_a3de9632d7c459c2d7ea961be84005921}{nscales} (void) const 
+\item 
+int \hyperlink{class_model_ad9ff4f0d1dd752dd96f6ff4a47e3486d}{flen} (void) const 
+\item 
+int \hyperlink{class_model_ab64488cd01aa451323bf1e30603fbc73}{norient} (void) const 
+\item 
+int \hyperlink{class_model_acaee5d575cfdb39a4a6ebc3b765a88bc}{ncomponents} (void) const 
+\item 
+virtual bool \hyperlink{class_model_a952f21d72d87aa30387ea6e5c1d603fd}{serialize} (const std\-::string \&filename) const =0
+\item 
+virtual bool \hyperlink{class_model_a2fc5d668c4930e8172e1a1460a8e6b46}{deserialize} (const std\-::string \&filename)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \hyperlink{class_model_ac8594fac5ef6d874cf0a4f2fd856914d}{filtersw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the filter weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \hyperlink{class_model_ab3f13d90cc96c70d4b454db12528f85f}{filtersi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the filer indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a94f2d563f3725231a6f684b4dce4f1ef}{vector2\-Df} \hyperlink{class_model_a1e1fba557437a9f4c0ef1535a64d83f2}{defw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the deformation weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \hyperlink{class_model_a477df0e7641f38782085d0a425625d12}{defi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the deformation indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_model_ab870c45d7637a43ba73c81cc4080a497}{biasw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the bias weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \hyperlink{class_model_a0306acb4cfa28b6f13ccd76c011d20ac}{biasi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the bias indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_ac468fcf6870d6563ac8fa3669845afcc}{vector\-Point} \hyperlink{class_model_ac2aa3eb0450ac05d0a3c7274b4ad91eb}{anchors\-\_\-}
+\begin{DoxyCompactList}\small\item\em the anchors (part position relative to parent) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \hyperlink{class_model_a7c3905dd5e45a2e60da02c783a49db9c}{biasid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the bias (weights and indices) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \hyperlink{class_model_a08e65111230ab010535cc9485dfd6d0d}{filterid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the filters (weights and indices) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a1f7c8ad00a53fb2d61b3656da9a6581d}{vector3\-Di} \hyperlink{class_model_a381f13c9035313ffd1cb67e07a2e84bd}{defid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the deformation (weights, indices and anchors \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} \hyperlink{class_model_a4e1151fe7911f52ec75944eff1b257f4}{parentid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the parent (for biasid\-\_\-, filterid\-\_\- and defid\-\_\-) \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_model_afca3bde5ad33e936c455d3d311b8406d}{name\-\_\-}
+\begin{DoxyCompactList}\small\item\em a unique string identifier for the model \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \hyperlink{class_model_a976b10b7048b41203eae19c141654abf}{conn\-\_\-}
+\begin{DoxyCompactList}\small\item\em the connectivity of the parts, where each element is a reference to the part's parent \end{DoxyCompactList}\item 
+int \hyperlink{class_model_ae8b3d33dbc43d6ab07c1553c9a1bbc2e}{nparts\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of parts \end{DoxyCompactList}\item 
+int \hyperlink{class_model_a047a8d7591bde166f0c3ab36a2130b53}{nmixtures\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of mixtures \end{DoxyCompactList}\item 
+int \hyperlink{class_model_ab711641b36aa9b8b578acf151af55aa7}{nscales\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of scales at which to compute features \end{DoxyCompactList}\item 
+float \hyperlink{class_model_ac2263c14bbd27a5fed433494354e2b02}{thresh\-\_\-}
+\begin{DoxyCompactList}\small\item\em the threshold for a positive detection \end{DoxyCompactList}\item 
+int \hyperlink{class_model_af34c4284d739cac02812d76eaa231679}{binsize\-\_\-}
+\begin{DoxyCompactList}\small\item\em the spatial pooling size when computing features \end{DoxyCompactList}\item 
+int \hyperlink{class_model_afafec86aa7175a4664ae76d545f084ea}{flen\-\_\-}
+\begin{DoxyCompactList}\small\item\em the length of the feature vector in each bin \end{DoxyCompactList}\item 
+int \hyperlink{class_model_a40c5597450f8efb960bb7da74890e73c}{norient\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of orientations per H\-O\-G feature bin \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Monolithic container class for storing model parameters. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_model_ae3b375de5f6df4faf74a95d64748e048}{\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}Model\-::\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_ae3b375de5f6df4faf74a95d64748e048}
+\hypertarget{class_model_af032d8433c87a0a3a431faf6563a1f03}{\index{Model@{Model}!$\sim$\-Model@{$\sim$\-Model}}
+\index{$\sim$\-Model@{$\sim$\-Model}!Model@{Model}}
+\subsubsection[{$\sim$\-Model}]{\setlength{\rightskip}{0pt plus 5cm}virtual Model\-::$\sim$\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_model_af032d8433c87a0a3a431faf6563a1f03}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_model_a047262c3a9de203b9d67094128c483a5}{\index{Model@{Model}!anchors@{anchors}}
+\index{anchors@{anchors}!Model@{Model}}
+\subsubsection[{anchors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Point}\& Model\-::anchors (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a047262c3a9de203b9d67094128c483a5}
+\hypertarget{class_model_aad5223ba9a48a9d4301d004d11457006}{\index{Model@{Model}!bias@{bias}}
+\index{bias@{bias}!Model@{Model}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf}\& Model\-::bias (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_aad5223ba9a48a9d4301d004d11457006}
+\hypertarget{class_model_a478f9460cf39e00f0d65c0afbecd8677}{\index{Model@{Model}!biasi@{biasi}}
+\index{biasi@{biasi}!Model@{Model}}
+\subsubsection[{biasi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori}\& Model\-::biasi (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a478f9460cf39e00f0d65c0afbecd8677}
+\hypertarget{class_model_a4088cf71d411e0cbbef2eb7c0861b039}{\index{Model@{Model}!biasid@{biasid}}
+\index{biasid@{biasid}!Model@{Model}}
+\subsubsection[{biasid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di}\& Model\-::biasid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a4088cf71d411e0cbbef2eb7c0861b039}
+\hypertarget{class_model_a93d5e6030b6ea9ffe155b459d9e58585}{\index{Model@{Model}!binsize@{binsize}}
+\index{binsize@{binsize}!Model@{Model}}
+\subsubsection[{binsize}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::binsize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a93d5e6030b6ea9ffe155b459d9e58585}
+\hypertarget{class_model_a65d5e15900bc329b42acc7ce57c45628}{\index{Model@{Model}!conn@{conn}}
+\index{conn@{conn}!Model@{Model}}
+\subsubsection[{conn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori}\& Model\-::conn (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a65d5e15900bc329b42acc7ce57c45628}
+\hypertarget{class_model_a2d471c6cb6ab4273963b986e21f91f82}{\index{Model@{Model}!def@{def}}
+\index{def@{def}!Model@{Model}}
+\subsubsection[{def}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Df}\& Model\-::def (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a2d471c6cb6ab4273963b986e21f91f82}
+\hypertarget{class_model_a68d158f45c15ca0417b97cc140c498c6}{\index{Model@{Model}!defi@{defi}}
+\index{defi@{defi}!Model@{Model}}
+\subsubsection[{defi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori}\& Model\-::defi (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a68d158f45c15ca0417b97cc140c498c6}
+\hypertarget{class_model_a2efd0f976fb014b3267281fd79172921}{\index{Model@{Model}!defid@{defid}}
+\index{defid@{defid}!Model@{Model}}
+\subsubsection[{defid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di}\& Model\-::defid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a2efd0f976fb014b3267281fd79172921}
+\hypertarget{class_model_a2fc5d668c4930e8172e1a1460a8e6b46}{\index{Model@{Model}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Model@{Model}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Model\-::deserialize (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_model_a2fc5d668c4930e8172e1a1460a8e6b46}
+
+
+Implemented in \hyperlink{class_file_storage_model_af97e8cf0ced06893ffca6ec119a31143}{File\-Storage\-Model}, and \hyperlink{class_matlab_i_o_model_a223538821bf7944a26433f7f99017f8b}{Matlab\-I\-O\-Model}.
+
+\hypertarget{class_model_a35c8491baa7893180abf62f22be40499}{\index{Model@{Model}!filterid@{filterid}}
+\index{filterid@{filterid}!Model@{Model}}
+\subsubsection[{filterid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di}\& Model\-::filterid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a35c8491baa7893180abf62f22be40499}
+\hypertarget{class_model_ad923232199aa30bb69436fd08ef01b6d}{\index{Model@{Model}!filters@{filters}}
+\index{filters@{filters}!Model@{Model}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat}\& Model\-::filters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_ad923232199aa30bb69436fd08ef01b6d}
+\hypertarget{class_model_a66a09e10ef051d4c261546d4016b7d74}{\index{Model@{Model}!filtersi@{filtersi}}
+\index{filtersi@{filtersi}!Model@{Model}}
+\subsubsection[{filtersi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori}\& Model\-::filtersi (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a66a09e10ef051d4c261546d4016b7d74}
+\hypertarget{class_model_ad9ff4f0d1dd752dd96f6ff4a47e3486d}{\index{Model@{Model}!flen@{flen}}
+\index{flen@{flen}!Model@{Model}}
+\subsubsection[{flen}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::flen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_ad9ff4f0d1dd752dd96f6ff4a47e3486d}
+\hypertarget{class_model_aeae6527ff13db7724c53c942029d882d}{\index{Model@{Model}!name@{name}}
+\index{name@{name}!Model@{Model}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Model\-::name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_aeae6527ff13db7724c53c942029d882d}
+\hypertarget{class_model_acaee5d575cfdb39a4a6ebc3b765a88bc}{\index{Model@{Model}!ncomponents@{ncomponents}}
+\index{ncomponents@{ncomponents}!Model@{Model}}
+\subsubsection[{ncomponents}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::ncomponents (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_acaee5d575cfdb39a4a6ebc3b765a88bc}
+\hypertarget{class_model_a86676b7fdc842393897b11ce8a7d7623}{\index{Model@{Model}!nmixtures@{nmixtures}}
+\index{nmixtures@{nmixtures}!Model@{Model}}
+\subsubsection[{nmixtures}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nmixtures (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a86676b7fdc842393897b11ce8a7d7623}
+\hypertarget{class_model_ab64488cd01aa451323bf1e30603fbc73}{\index{Model@{Model}!norient@{norient}}
+\index{norient@{norient}!Model@{Model}}
+\subsubsection[{norient}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::norient (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_ab64488cd01aa451323bf1e30603fbc73}
+\hypertarget{class_model_aadbe1db9da272e3c7925f14c10143360}{\index{Model@{Model}!nparts@{nparts}}
+\index{nparts@{nparts}!Model@{Model}}
+\subsubsection[{nparts}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nparts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_aadbe1db9da272e3c7925f14c10143360}
+\hypertarget{class_model_a3de9632d7c459c2d7ea961be84005921}{\index{Model@{Model}!nscales@{nscales}}
+\index{nscales@{nscales}!Model@{Model}}
+\subsubsection[{nscales}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nscales (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a3de9632d7c459c2d7ea961be84005921}
+\hypertarget{class_model_a2a44477641549a9c8ebecfff9221bda9}{\index{Model@{Model}!parentid@{parentid}}
+\index{parentid@{parentid}!Model@{Model}}
+\subsubsection[{parentid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Di}\& Model\-::parentid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a2a44477641549a9c8ebecfff9221bda9}
+\hypertarget{class_model_a952f21d72d87aa30387ea6e5c1d603fd}{\index{Model@{Model}!serialize@{serialize}}
+\index{serialize@{serialize}!Model@{Model}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Model\-::serialize (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_model_a952f21d72d87aa30387ea6e5c1d603fd}
+
+
+Implemented in \hyperlink{class_file_storage_model_acc945cf6792663f84f1302e926dca63d}{File\-Storage\-Model}, and \hyperlink{class_matlab_i_o_model_ad67a1237af4a4e4d736599e6f2474252}{Matlab\-I\-O\-Model}.
+
+\hypertarget{class_model_a474739b5b87ebfc7342d10124dfd59b6}{\index{Model@{Model}!thresh@{thresh}}
+\index{thresh@{thresh}!Model@{Model}}
+\subsubsection[{thresh}]{\setlength{\rightskip}{0pt plus 5cm}float Model\-::thresh (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_model_a474739b5b87ebfc7342d10124dfd59b6}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_model_ac2aa3eb0450ac05d0a3c7274b4ad91eb}{\index{Model@{Model}!anchors\-\_\-@{anchors\-\_\-}}
+\index{anchors\-\_\-@{anchors\-\_\-}!Model@{Model}}
+\subsubsection[{anchors\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Point} Model\-::anchors\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ac2aa3eb0450ac05d0a3c7274b4ad91eb}
+
+
+the anchors (part position relative to parent) 
+
+\hypertarget{class_model_a0306acb4cfa28b6f13ccd76c011d20ac}{\index{Model@{Model}!biasi\-\_\-@{biasi\-\_\-}}
+\index{biasi\-\_\-@{biasi\-\_\-}!Model@{Model}}
+\subsubsection[{biasi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} Model\-::biasi\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a0306acb4cfa28b6f13ccd76c011d20ac}
+
+
+the bias indices 
+
+\hypertarget{class_model_a7c3905dd5e45a2e60da02c783a49db9c}{\index{Model@{Model}!biasid\-\_\-@{biasid\-\_\-}}
+\index{biasid\-\_\-@{biasid\-\_\-}!Model@{Model}}
+\subsubsection[{biasid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di} Model\-::biasid\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a7c3905dd5e45a2e60da02c783a49db9c}
+
+
+indexing schema for the bias (weights and indices) 
+
+\hypertarget{class_model_ab870c45d7637a43ba73c81cc4080a497}{\index{Model@{Model}!biasw\-\_\-@{biasw\-\_\-}}
+\index{biasw\-\_\-@{biasw\-\_\-}!Model@{Model}}
+\subsubsection[{biasw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf} Model\-::biasw\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ab870c45d7637a43ba73c81cc4080a497}
+
+
+the bias weights 
+
+\hypertarget{class_model_af34c4284d739cac02812d76eaa231679}{\index{Model@{Model}!binsize\-\_\-@{binsize\-\_\-}}
+\index{binsize\-\_\-@{binsize\-\_\-}!Model@{Model}}
+\subsubsection[{binsize\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::binsize\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_af34c4284d739cac02812d76eaa231679}
+
+
+the spatial pooling size when computing features 
+
+\hypertarget{class_model_a976b10b7048b41203eae19c141654abf}{\index{Model@{Model}!conn\-\_\-@{conn\-\_\-}}
+\index{conn\-\_\-@{conn\-\_\-}!Model@{Model}}
+\subsubsection[{conn\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} Model\-::conn\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a976b10b7048b41203eae19c141654abf}
+
+
+the connectivity of the parts, where each element is a reference to the part's parent 
+
+\hypertarget{class_model_a477df0e7641f38782085d0a425625d12}{\index{Model@{Model}!defi\-\_\-@{defi\-\_\-}}
+\index{defi\-\_\-@{defi\-\_\-}!Model@{Model}}
+\subsubsection[{defi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} Model\-::defi\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a477df0e7641f38782085d0a425625d12}
+
+
+the deformation indices 
+
+\hypertarget{class_model_a381f13c9035313ffd1cb67e07a2e84bd}{\index{Model@{Model}!defid\-\_\-@{defid\-\_\-}}
+\index{defid\-\_\-@{defid\-\_\-}!Model@{Model}}
+\subsubsection[{defid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di} Model\-::defid\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a381f13c9035313ffd1cb67e07a2e84bd}
+
+
+indexing schema for the deformation (weights, indices and anchors 
+
+\hypertarget{class_model_a1e1fba557437a9f4c0ef1535a64d83f2}{\index{Model@{Model}!defw\-\_\-@{defw\-\_\-}}
+\index{defw\-\_\-@{defw\-\_\-}!Model@{Model}}
+\subsubsection[{defw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Df} Model\-::defw\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a1e1fba557437a9f4c0ef1535a64d83f2}
+
+
+the deformation weights 
+
+\hypertarget{class_model_a08e65111230ab010535cc9485dfd6d0d}{\index{Model@{Model}!filterid\-\_\-@{filterid\-\_\-}}
+\index{filterid\-\_\-@{filterid\-\_\-}!Model@{Model}}
+\subsubsection[{filterid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector3\-Di} Model\-::filterid\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a08e65111230ab010535cc9485dfd6d0d}
+
+
+indexing schema for the filters (weights and indices) 
+
+\hypertarget{class_model_ab3f13d90cc96c70d4b454db12528f85f}{\index{Model@{Model}!filtersi\-\_\-@{filtersi\-\_\-}}
+\index{filtersi\-\_\-@{filtersi\-\_\-}!Model@{Model}}
+\subsubsection[{filtersi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} Model\-::filtersi\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ab3f13d90cc96c70d4b454db12528f85f}
+
+
+the filer indices 
+
+\hypertarget{class_model_ac8594fac5ef6d874cf0a4f2fd856914d}{\index{Model@{Model}!filtersw\-\_\-@{filtersw\-\_\-}}
+\index{filtersw\-\_\-@{filtersw\-\_\-}!Model@{Model}}
+\subsubsection[{filtersw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat} Model\-::filtersw\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ac8594fac5ef6d874cf0a4f2fd856914d}
+
+
+the filter weights 
+
+\hypertarget{class_model_afafec86aa7175a4664ae76d545f084ea}{\index{Model@{Model}!flen\-\_\-@{flen\-\_\-}}
+\index{flen\-\_\-@{flen\-\_\-}!Model@{Model}}
+\subsubsection[{flen\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::flen\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_afafec86aa7175a4664ae76d545f084ea}
+
+
+the length of the feature vector in each bin 
+
+\hypertarget{class_model_afca3bde5ad33e936c455d3d311b8406d}{\index{Model@{Model}!name\-\_\-@{name\-\_\-}}
+\index{name\-\_\-@{name\-\_\-}!Model@{Model}}
+\subsubsection[{name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Model\-::name\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_afca3bde5ad33e936c455d3d311b8406d}
+
+
+a unique string identifier for the model 
+
+\hypertarget{class_model_a047a8d7591bde166f0c3ab36a2130b53}{\index{Model@{Model}!nmixtures\-\_\-@{nmixtures\-\_\-}}
+\index{nmixtures\-\_\-@{nmixtures\-\_\-}!Model@{Model}}
+\subsubsection[{nmixtures\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nmixtures\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a047a8d7591bde166f0c3ab36a2130b53}
+
+
+the number of mixtures 
+
+\hypertarget{class_model_a40c5597450f8efb960bb7da74890e73c}{\index{Model@{Model}!norient\-\_\-@{norient\-\_\-}}
+\index{norient\-\_\-@{norient\-\_\-}!Model@{Model}}
+\subsubsection[{norient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::norient\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a40c5597450f8efb960bb7da74890e73c}
+
+
+the number of orientations per H\-O\-G feature bin 
+
+\hypertarget{class_model_ae8b3d33dbc43d6ab07c1553c9a1bbc2e}{\index{Model@{Model}!nparts\-\_\-@{nparts\-\_\-}}
+\index{nparts\-\_\-@{nparts\-\_\-}!Model@{Model}}
+\subsubsection[{nparts\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nparts\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ae8b3d33dbc43d6ab07c1553c9a1bbc2e}
+
+
+the number of parts 
+
+\hypertarget{class_model_ab711641b36aa9b8b578acf151af55aa7}{\index{Model@{Model}!nscales\-\_\-@{nscales\-\_\-}}
+\index{nscales\-\_\-@{nscales\-\_\-}!Model@{Model}}
+\subsubsection[{nscales\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Model\-::nscales\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ab711641b36aa9b8b578acf151af55aa7}
+
+
+the number of scales at which to compute features 
+
+\hypertarget{class_model_a4e1151fe7911f52ec75944eff1b257f4}{\index{Model@{Model}!parentid\-\_\-@{parentid\-\_\-}}
+\index{parentid\-\_\-@{parentid\-\_\-}!Model@{Model}}
+\subsubsection[{parentid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Di} Model\-::parentid\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_a4e1151fe7911f52ec75944eff1b257f4}
+
+
+indexing schema for the parent (for biasid\-\_\-, filterid\-\_\- and defid\-\_\-) 
+
+\hypertarget{class_model_ac2263c14bbd27a5fed433494354e2b02}{\index{Model@{Model}!thresh\-\_\-@{thresh\-\_\-}}
+\index{thresh\-\_\-@{thresh\-\_\-}!Model@{Model}}
+\subsubsection[{thresh\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float Model\-::thresh\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_model_ac2263c14bbd27a5fed433494354e2b02}
+
+
+the threshold for a positive detection 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_model_8hpp}{Model.\-hpp}\end{DoxyCompactItemize}

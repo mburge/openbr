@@ -1,0 +1,66 @@
+\hypertarget{nms_8cpp}{\section{/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/nms.cpp File Reference}
+\label{nms_8cpp}\index{/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/nms.\-cpp@{/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/nms.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}nms.\-hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{non\-Maxima\-Suppression} (const Mat \&src, const int sz, Mat \&dst, const Mat mask)
+\begin{DoxyCompactList}\small\item\em suppress non-\/maximal values \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{\index{nms.\-cpp@{nms.\-cpp}!non\-Maxima\-Suppression@{non\-Maxima\-Suppression}}
+\index{non\-Maxima\-Suppression@{non\-Maxima\-Suppression}!nms.cpp@{nms.\-cpp}}
+\subsubsection[{non\-Maxima\-Suppression}]{\setlength{\rightskip}{0pt plus 5cm}void non\-Maxima\-Suppression (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{src, }
+\item[{const int}]{sz, }
+\item[{Mat \&}]{dst, }
+\item[{const Mat}]{mask}
+\end{DoxyParamCaption}
+)}}\label{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}
+
+
+suppress non-\/maximal values 
+
+non\-Maxima\-Suppression produces a mask (dst) such that every non-\/zero value of the mask corresponds to a local maxima of src. The criteria for local maxima is as follows\-:
+
+For every possible (sz x sz) region within src, an element is a local maxima of src iff it is strictly greater than all other elements of windows which intersect the given element
+
+Intuitively, this means that all maxima must be at least sz+1 pixels apart, though the spacing may be greater
+
+A gradient image or a constant image has no local maxima by the definition given above
+
+The method is derived from the following paper\-: A. Neubeck and L. Van Gool. \char`\"{}\-Efficient Non-\/\-Maximum Suppression,\char`\"{} I\-C\-P\-R 2006
+
+Example\-: 
+\begin{DoxyCode}
+*   \textcolor{comment}{// create a random test image}
+*   Mat random(Size(2000,2000), DataType<float>::type);
+*   randn(random, 1, 1);
+*
+*   \textcolor{comment}{// only look for local maxima above the value of 1}
+*   Mat mask = (random > 1);
+*
+*   \textcolor{comment}{// find the local maxima with a window of 50}
+*   Mat maxima;
+*   \hyperlink{nms_8cpp_a8bd3246e5b9d2aeed8bafd6cffa711c4}{nonMaximaSuppression}(random, 50, maxima, mask);
+*
+*   \textcolor{comment}{// optionally set all non-maxima to zero}
+*   random.setTo(0, maxima == 0);
+* 
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & the input image/matrix, of any valid cv type \\
+\hline
+{\em sz} & the size of the window \\
+\hline
+{\em dst} & the mask of type C\-V\-\_\-8\-U, where non-\/zero elements correspond to local maxima of the src \\
+\hline
+{\em mask} & an input mask to skip particular elements \\
+\hline
+\end{DoxyParams}

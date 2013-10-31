@@ -1,0 +1,131 @@
+\hypertarget{class_distance_transform}{\section{Distance\-Transform$<$ T $>$ Class Template Reference}
+\label{class_distance_transform}\index{Distance\-Transform$<$ T $>$@{Distance\-Transform$<$ T $>$}}
+}
+
+
+class for performing distance transforms of sampled functions  
+
+
+
+
+{\ttfamily \#include $<$Distance\-Transform.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_distance_transform_ae6c06d78413d63dff5abdc8abd44499d}{Distance\-Transform} ()
+\item 
+virtual \hyperlink{class_distance_transform_ada481afc2685e2e52b9c51ed4950ad60}{$\sim$\-Distance\-Transform} ()
+\item 
+void \hyperlink{class_distance_transform_a973ae7b0b971b4c5d5a07e56ec6ea31d}{compute} (const cv\-::\-Mat\-\_\-$<$ T $>$ \&score\-\_\-in, const \hyperlink{class_penalty_function}{Penalty\-Function} \&fx, const \hyperlink{class_penalty_function}{Penalty\-Function} \&fy, const cv\-::\-Point os, cv\-::\-Mat\-\_\-$<$ T $>$ \&score\-\_\-out, cv\-::\-Mat\-\_\-$<$ int $>$ \&Ix, cv\-::\-Mat\-\_\-$<$ int $>$ \&Iy) const 
+\begin{DoxyCompactList}\small\item\em Generalized distance transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_distance_transform_af08e1ea9d7d106f38c02d1d586f5ad6f}{compute\-Row} (T const $\ast$const src, T $\ast$const dst, int $\ast$const ptr, const size\-\_\-t N, const \hyperlink{class_penalty_function}{Penalty\-Function} \&f, int os=0) const 
+\begin{DoxyCompactList}\small\item\em Generalized 1\-D distance transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Distance\-Transform$<$ T $>$}
+
+class for performing distance transforms of sampled functions 
+
+This distance transform can be used to reduce the complexity of algorithms such as dynamic programming, where the spatial distance penalty function is convex. This distance function is defined by the \hyperlink{class_penalty_function}{Penalty\-Function} interface.
+
+The distance transform is a separable operation, so a 2\-D distance transform will be applied first over the rows, then over the columns 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_distance_transform_ae6c06d78413d63dff5abdc8abd44499d}{\index{Distance\-Transform@{Distance\-Transform}!Distance\-Transform@{Distance\-Transform}}
+\index{Distance\-Transform@{Distance\-Transform}!DistanceTransform@{Distance\-Transform}}
+\subsubsection[{Distance\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Distance\-Transform}$<$ T $>$\-::{\bf Distance\-Transform} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_distance_transform_ae6c06d78413d63dff5abdc8abd44499d}
+\hypertarget{class_distance_transform_ada481afc2685e2e52b9c51ed4950ad60}{\index{Distance\-Transform@{Distance\-Transform}!$\sim$\-Distance\-Transform@{$\sim$\-Distance\-Transform}}
+\index{$\sim$\-Distance\-Transform@{$\sim$\-Distance\-Transform}!DistanceTransform@{Distance\-Transform}}
+\subsubsection[{$\sim$\-Distance\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf Distance\-Transform}$<$ T $>$\-::$\sim${\bf Distance\-Transform} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_distance_transform_ada481afc2685e2e52b9c51ed4950ad60}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_distance_transform_a973ae7b0b971b4c5d5a07e56ec6ea31d}{\index{Distance\-Transform@{Distance\-Transform}!compute@{compute}}
+\index{compute@{compute}!DistanceTransform@{Distance\-Transform}}
+\subsubsection[{compute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Distance\-Transform}$<$ T $>$\-::compute (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat\-\_\-$<$ T $>$ \&}]{score\-\_\-in, }
+\item[{const {\bf Penalty\-Function} \&}]{fx, }
+\item[{const {\bf Penalty\-Function} \&}]{fy, }
+\item[{const cv\-::\-Point}]{os, }
+\item[{cv\-::\-Mat\-\_\-$<$ T $>$ \&}]{score\-\_\-out, }
+\item[{cv\-::\-Mat\-\_\-$<$ int $>$ \&}]{Ix, }
+\item[{cv\-::\-Mat\-\_\-$<$ int $>$ \&}]{Iy}
+\end{DoxyParamCaption}
+) const}}\label{class_distance_transform_a973ae7b0b971b4c5d5a07e56ec6ea31d}
+
+
+Generalized distance transform. 
+
+2-\/\-Dimensional generalized distance transform based on the paper\-: P. Felzenszwalb and D. Huttenlocher, \char`\"{}\-Distance Transforms of Sampled Functions,\char`\"{} Cornell Technical Report, 2004
+
+This is used to reduce the complexity of the dynamic program, namely when all of the cost functions are quadratic. The 2\-D distance transform is broken down into two 1\-D transforms since the operation is separable
+
+
+\begin{DoxyParams}{Parameters}
+{\em score\-\_\-in} & the input score \\
+\hline
+{\em fx} & the distance penalty function in the x-\/dimension \\
+\hline
+{\em fy} & the distance penalty function in the y-\/dimension \\
+\hline
+{\em os} & the anchor offset of the child from the parent \\
+\hline
+{\em score\-\_\-out} & the distance transformed score \\
+\hline
+{\em Ix} & the distances in the x direction \\
+\hline
+{\em Iy} & the distances in the y direction \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_distance_transform_af08e1ea9d7d106f38c02d1d586f5ad6f}{\index{Distance\-Transform@{Distance\-Transform}!compute\-Row@{compute\-Row}}
+\index{compute\-Row@{compute\-Row}!DistanceTransform@{Distance\-Transform}}
+\subsubsection[{compute\-Row}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Distance\-Transform}$<$ T $>$\-::compute\-Row (
+\begin{DoxyParamCaption}
+\item[{T const $\ast$const}]{src, }
+\item[{T $\ast$const}]{dst, }
+\item[{int $\ast$const}]{ptr, }
+\item[{const size\-\_\-t}]{N, }
+\item[{const {\bf Penalty\-Function} \&}]{f, }
+\item[{int}]{os = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{class_distance_transform_af08e1ea9d7d106f38c02d1d586f5ad6f}
+
+
+Generalized 1\-D distance transform. 
+
+This method performs the 1\-D distance transform across the rows of a matrix. It is called twice internally by distance\-Transform(), once across the rows and once down the columns (transposed to rows)
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & pointer to the start of the source data \\
+\hline
+{\em dst} & pointer to the start of the destination data \\
+\hline
+{\em ptr} & pointer to the indices \\
+\hline
+{\em N} & the total number of rows \\
+\hline
+{\em f} & the 1\-D distance penalty function \\
+\hline
+{\em os} & the anchor offset \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_distance_transform_8hpp}{Distance\-Transform.\-hpp}\end{DoxyCompactItemize}

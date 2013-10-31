@@ -1,0 +1,209 @@
+\hypertarget{class_dynamic_program}{\section{Dynamic\-Program$<$ T $>$ Class Template Reference}
+\label{class_dynamic_program}\index{Dynamic\-Program$<$ T $>$@{Dynamic\-Program$<$ T $>$}}
+}
+
+
+Dynamic Program to calculate the best holistic detection.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\-Program.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dynamic_program_ac9388ce41aec4bbb8003546859b17285}{Dynamic\-Program} ()
+\item 
+\hyperlink{class_dynamic_program_adb1e019e058d9b7f7b6cb419fb1e22cd}{Dynamic\-Program} (double thresh)
+\item 
+virtual \hyperlink{class_dynamic_program_a68458d8f58efec81d37712bd5ec99b51}{$\sim$\-Dynamic\-Program} ()
+\item 
+void \hyperlink{class_dynamic_program_ad4f899b21d3423b4fc52ef4fb77cdd86}{min} (\hyperlink{class_parts}{Parts} \&parts, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&scores, \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Ix, \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Iy, \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Ik, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&rootv, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&rooti)
+\begin{DoxyCompactList}\small\item\em Get the min of a dynamic program. \end{DoxyCompactList}\item 
+void \hyperlink{class_dynamic_program_a7f3276a0014489972129ad7c4a8d4a69}{argmin} (\hyperlink{class_parts}{Parts} \&parts, const \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&rootv, const \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&rooti, const \hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} scales, const \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Ix, const \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Iy, const \hyperlink{types_8hpp_a9c446ceac5aee9d97fb9ee36ad27072f}{vector4\-D\-Mat} \&Ik, \hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates)
+\begin{DoxyCompactList}\small\item\em get the argmin of a dynamic program \end{DoxyCompactList}\item 
+void \hyperlink{class_dynamic_program_a9de6aa6cd756dee7e9c060b354c59f73}{distance\-Transform} (const cv\-::\-Mat \&score\-\_\-in, const \hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} w, cv\-::\-Point os, cv\-::\-Mat \&score\-\_\-out, cv\-::\-Mat \&Ix, cv\-::\-Mat \&Iy)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_dynamic_program_a5562f59b6e660b46709fdced37072613}{distance\-Transform1\-D} (const T $\ast$src, T $\ast$dst, int $\ast$ptr, size\-\_\-t n, T a, T b, int os)
+\item 
+void \hyperlink{class_dynamic_program_a4e50c2ce46bfd44072968b760f61f9c8}{distance\-Transform1\-D\-Mat} (const cv\-::\-Mat\-\_\-$<$ T $>$ \&src, cv\-::\-Mat\-\_\-$<$ T $>$ \&dst, cv\-::\-Mat\-\_\-$<$ int $>$ \&ptr, size\-\_\-t N, T a, T b, int os)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_dynamic_program_a08f2d4801faa0f964e217b9ac9927ec6}{thresh\-\_\-}
+\begin{DoxyCompactList}\small\item\em the threshold for a positive detection \end{DoxyCompactList}\item 
+\hyperlink{class_distance_transform}{Distance\-Transform}$<$ T $>$ \hyperlink{class_dynamic_program_a6cea0b8559d6a03d81e2003991ab67cf}{dt\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Dynamic\-Program$<$ T $>$}
+
+Dynamic Program to calculate the best holistic detection. 
+
+The Dynamic Program calculates the best holistic detection given a set of part detections and a model of the parts' likely relationships with their parents. The class has two primary methods\-: \hyperlink{class_dynamic_program_ad4f899b21d3423b4fc52ef4fb77cdd86}{min()} and \hyperlink{class_dynamic_program_a7f3276a0014489972129ad7c4a8d4a69}{argmin()}.
+
+\hyperlink{class_dynamic_program_ad4f899b21d3423b4fc52ef4fb77cdd86}{min()} computes the best candidates by passing messages from the leaves of the Part tree to the root. \hyperlink{class_dynamic_program_a7f3276a0014489972129ad7c4a8d4a69}{argmin()} traverses back down the tree to retrieve the actual Part locations 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dynamic_program_ac9388ce41aec4bbb8003546859b17285}{\index{Dynamic\-Program@{Dynamic\-Program}!Dynamic\-Program@{Dynamic\-Program}}
+\index{Dynamic\-Program@{Dynamic\-Program}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{Dynamic\-Program}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Dynamic\-Program}$<$ T $>$\-::{\bf Dynamic\-Program} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dynamic_program_ac9388ce41aec4bbb8003546859b17285}
+\hypertarget{class_dynamic_program_adb1e019e058d9b7f7b6cb419fb1e22cd}{\index{Dynamic\-Program@{Dynamic\-Program}!Dynamic\-Program@{Dynamic\-Program}}
+\index{Dynamic\-Program@{Dynamic\-Program}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{Dynamic\-Program}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Dynamic\-Program}$<$ T $>$\-::{\bf Dynamic\-Program} (
+\begin{DoxyParamCaption}
+\item[{double}]{thresh}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dynamic_program_adb1e019e058d9b7f7b6cb419fb1e22cd}
+\hypertarget{class_dynamic_program_a68458d8f58efec81d37712bd5ec99b51}{\index{Dynamic\-Program@{Dynamic\-Program}!$\sim$\-Dynamic\-Program@{$\sim$\-Dynamic\-Program}}
+\index{$\sim$\-Dynamic\-Program@{$\sim$\-Dynamic\-Program}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{$\sim$\-Dynamic\-Program}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf Dynamic\-Program}$<$ T $>$\-::$\sim${\bf Dynamic\-Program} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_dynamic_program_a68458d8f58efec81d37712bd5ec99b51}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dynamic_program_a7f3276a0014489972129ad7c4a8d4a69}{\index{Dynamic\-Program@{Dynamic\-Program}!argmin@{argmin}}
+\index{argmin@{argmin}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{argmin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Dynamic\-Program}$<$ T $>$\-::argmin (
+\begin{DoxyParamCaption}
+\item[{{\bf Parts} \&}]{parts, }
+\item[{const {\bf vector2\-D\-Mat} \&}]{rootv, }
+\item[{const {\bf vector2\-D\-Mat} \&}]{rooti, }
+\item[{const {\bf vectorf}}]{scales, }
+\item[{const {\bf vector4\-D\-Mat} \&}]{Ix, }
+\item[{const {\bf vector4\-D\-Mat} \&}]{Iy, }
+\item[{const {\bf vector4\-D\-Mat} \&}]{Ik, }
+\item[{{\bf vector\-Candidate} \&}]{candidates}
+\end{DoxyParamCaption}
+)}}\label{class_dynamic_program_a7f3276a0014489972129ad7c4a8d4a69}
+
+
+get the argmin of a dynamic program 
+
+Get the minimum argument of a dynamic program by traversing down the tree of a dynamic program, returning the locations of the best nodes 
+\begin{DoxyParams}{Parameters}
+{\em parts} & the tree of parts, referenced by the root \\
+\hline
+{\em rootv} & the root scores, across scale \\
+\hline
+{\em rooti} & the root indices, across scale \\
+\hline
+{\em scales} & the scales (used to calculate bounding box size) \\
+\hline
+{\em Ix} & the detection indices in the x direction \\
+\hline
+{\em Iy} & the detection indices in the y direction \\
+\hline
+{\em Ik} & the best mixture at each pixel \\
+\hline
+{\em candidates} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dynamic_program_a9de6aa6cd756dee7e9c060b354c59f73}{\index{Dynamic\-Program@{Dynamic\-Program}!distance\-Transform@{distance\-Transform}}
+\index{distance\-Transform@{distance\-Transform}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{distance\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Dynamic\-Program}$<$ T $>$\-::distance\-Transform (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{score\-\_\-in, }
+\item[{const {\bf vectorf}}]{w, }
+\item[{cv\-::\-Point}]{os, }
+\item[{cv\-::\-Mat \&}]{score\-\_\-out, }
+\item[{cv\-::\-Mat \&}]{Ix, }
+\item[{cv\-::\-Mat \&}]{Iy}
+\end{DoxyParamCaption}
+)}}\label{class_dynamic_program_a9de6aa6cd756dee7e9c060b354c59f73}
+\hypertarget{class_dynamic_program_a5562f59b6e660b46709fdced37072613}{\index{Dynamic\-Program@{Dynamic\-Program}!distance\-Transform1\-D@{distance\-Transform1\-D}}
+\index{distance\-Transform1\-D@{distance\-Transform1\-D}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{distance\-Transform1\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Dynamic\-Program}$<$ T $>$\-::distance\-Transform1\-D (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{src, }
+\item[{T $\ast$}]{dst, }
+\item[{int $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{n, }
+\item[{T}]{a, }
+\item[{T}]{b, }
+\item[{int}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dynamic_program_a5562f59b6e660b46709fdced37072613}
+\hypertarget{class_dynamic_program_a4e50c2ce46bfd44072968b760f61f9c8}{\index{Dynamic\-Program@{Dynamic\-Program}!distance\-Transform1\-D\-Mat@{distance\-Transform1\-D\-Mat}}
+\index{distance\-Transform1\-D\-Mat@{distance\-Transform1\-D\-Mat}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{distance\-Transform1\-D\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Dynamic\-Program}$<$ T $>$\-::distance\-Transform1\-D\-Mat (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat\-\_\-$<$ T $>$ \&}]{src, }
+\item[{cv\-::\-Mat\-\_\-$<$ T $>$ \&}]{dst, }
+\item[{cv\-::\-Mat\-\_\-$<$ int $>$ \&}]{ptr, }
+\item[{size\-\_\-t}]{N, }
+\item[{T}]{a, }
+\item[{T}]{b, }
+\item[{int}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dynamic_program_a4e50c2ce46bfd44072968b760f61f9c8}
+\hypertarget{class_dynamic_program_ad4f899b21d3423b4fc52ef4fb77cdd86}{\index{Dynamic\-Program@{Dynamic\-Program}!min@{min}}
+\index{min@{min}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Dynamic\-Program}$<$ T $>$\-::min (
+\begin{DoxyParamCaption}
+\item[{{\bf Parts} \&}]{parts, }
+\item[{{\bf vector2\-D\-Mat} \&}]{scores, }
+\item[{{\bf vector4\-D\-Mat} \&}]{Ix, }
+\item[{{\bf vector4\-D\-Mat} \&}]{Iy, }
+\item[{{\bf vector4\-D\-Mat} \&}]{Ik, }
+\item[{{\bf vector2\-D\-Mat} \&}]{rootv, }
+\item[{{\bf vector2\-D\-Mat} \&}]{rooti}
+\end{DoxyParamCaption}
+)}}\label{class_dynamic_program_ad4f899b21d3423b4fc52ef4fb77cdd86}
+
+
+Get the min of a dynamic program. 
+
+Get the min of a dynamic program by starting at the leaf nodes, and passing the scores up to the root node. This is essentially a tail recursive algorithm which we can unfold since we know that the parts are sorted from the root to the leaves
+
+The algorithm involves 3 steps\-: (1) Apply distance transform (2) Shift by the anchor position of the part wrt the parent (3) Downsample if necessary
+
+
+\begin{DoxyParams}{Parameters}
+{\em parts} & the parts tree, referenced by the root \\
+\hline
+{\em scores} & the probability densities (pdfs) of part locations (fine to coarse) \\
+\hline
+{\em Ix} & the detection indices in the x direction \\
+\hline
+{\em Iy} & the detection indices in the y direction \\
+\hline
+{\em Ik} & the best mixture at each pixel \\
+\hline
+{\em rootv} & the root scores, across scale \\
+\hline
+{\em rooti} & the root indices, across scale \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_dynamic_program_a6cea0b8559d6a03d81e2003991ab67cf}{\index{Dynamic\-Program@{Dynamic\-Program}!dt\-\_\-@{dt\-\_\-}}
+\index{dt\-\_\-@{dt\-\_\-}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{dt\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Distance\-Transform}$<$T$>$ {\bf Dynamic\-Program}$<$ T $>$\-::dt\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dynamic_program_a6cea0b8559d6a03d81e2003991ab67cf}
+\hypertarget{class_dynamic_program_a08f2d4801faa0f964e217b9ac9927ec6}{\index{Dynamic\-Program@{Dynamic\-Program}!thresh\-\_\-@{thresh\-\_\-}}
+\index{thresh\-\_\-@{thresh\-\_\-}!DynamicProgram@{Dynamic\-Program}}
+\subsubsection[{thresh\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ double {\bf Dynamic\-Program}$<$ T $>$\-::thresh\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dynamic_program_a08f2d4801faa0f964e217b9ac9927ec6}
+
+
+the threshold for a positive detection 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_dynamic_program_8hpp}{Dynamic\-Program.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_dynamic_program_8cpp}{Dynamic\-Program.\-cpp}\end{DoxyCompactItemize}

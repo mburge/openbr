@@ -1,0 +1,143 @@
+\hypertarget{class_math}{\section{Math Class Reference}
+\label{class_math}\index{Math@{Math}}
+}
+
+
+{\ttfamily \#include $<$Math.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_math_a28ea971a536094b9083ec8f36ff357e5}{$\sim$\-Math} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \hyperlink{class_math_aca890c10f12205897ac47792494d149f}{median} (const cv\-::\-Mat \&mat)
+\begin{DoxyCompactList}\small\item\em return the median value of a matrix \end{DoxyCompactList}\item 
+static void \hyperlink{class_math_a08953b39d9d278ee0bb2a15bda7fd1a2}{find} (const cv\-::\-Mat \&binary, std\-::vector$<$ cv\-::\-Point $>$ \&idx)
+\begin{DoxyCompactList}\small\item\em find nonzero elements in a matrix \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \hyperlink{class_math_a1c558fca5013d16a9df3adf2caa7c610}{reduce\-Pick\-Index} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&in, const cv\-::\-Mat \&idx, cv\-::\-Mat \&out)
+\begin{DoxyCompactList}\small\item\em Reduce a vector of matrices via indexing. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \hyperlink{class_math_a97f8ffb7a7855e6cc0dabcef0817bafa}{reduce\-Max} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&in, cv\-::\-Mat \&maxv, cv\-::\-Mat \&maxi)
+\begin{DoxyCompactList}\small\item\em Reduce a vector of matrices via elementwise max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_math_a4b0f0a2da150d3fbfdb71524420c9fbf}{Math} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_math_a4b0f0a2da150d3fbfdb71524420c9fbf}{\index{Math@{Math}!Math@{Math}}
+\index{Math@{Math}!Math@{Math}}
+\subsubsection[{Math}]{\setlength{\rightskip}{0pt plus 5cm}Math\-::\-Math (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{class_math_a4b0f0a2da150d3fbfdb71524420c9fbf}
+\hypertarget{class_math_a28ea971a536094b9083ec8f36ff357e5}{\index{Math@{Math}!$\sim$\-Math@{$\sim$\-Math}}
+\index{$\sim$\-Math@{$\sim$\-Math}!Math@{Math}}
+\subsubsection[{$\sim$\-Math}]{\setlength{\rightskip}{0pt plus 5cm}virtual Math\-::$\sim$\-Math (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_math_a28ea971a536094b9083ec8f36ff357e5}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_math_a08953b39d9d278ee0bb2a15bda7fd1a2}{\index{Math@{Math}!find@{find}}
+\index{find@{find}!Math@{Math}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}static void Math\-::find (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{binary, }
+\item[{std\-::vector$<$ cv\-::\-Point $>$ \&}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_math_a08953b39d9d278ee0bb2a15bda7fd1a2}
+
+
+find nonzero elements in a matrix 
+
+Find all nonzero elements in a matrix of type C\-V\-\_\-8\-U, and return the indieces (x,y) of the nonzero pixels in an array of Point
+
+
+\begin{DoxyParams}{Parameters}
+{\em binary} & the input image (usually the output of a comparison operation such as compare(), $>$, ==, etc) \\
+\hline
+{\em idx} & the output vector of nonzero indices \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_math_aca890c10f12205897ac47792494d149f}{\index{Math@{Math}!median@{median}}
+\index{median@{median}!Math@{Math}}
+\subsubsection[{median}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static T Math\-::median (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{mat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_math_aca890c10f12205897ac47792494d149f}
+
+
+return the median value of a matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & the input matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the median value, of the same precision as the input 
+\end{DoxyReturn}
+\hypertarget{class_math_a97f8ffb7a7855e6cc0dabcef0817bafa}{\index{Math@{Math}!reduce\-Max@{reduce\-Max}}
+\index{reduce\-Max@{reduce\-Max}!Math@{Math}}
+\subsubsection[{reduce\-Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void Math\-::reduce\-Max (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{in, }
+\item[{cv\-::\-Mat \&}]{maxv, }
+\item[{cv\-::\-Mat \&}]{maxi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_math_a97f8ffb7a7855e6cc0dabcef0817bafa}
+
+
+Reduce a vector of matrices via elementwise max. 
+
+Reduce a 3\-D matrix (represented as a vector of matrices using cv\-::split() ) to a 2\-D matrix by taking the elementwise maximum across the 3\-D dimension. Therefore in.\-size() == out.\-size() \&\& out.\-channels() == 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the input 3\-D matrix \\
+\hline
+{\em maxv} & the output 2\-D matrix, containing the maximal values \\
+\hline
+{\em maxi} & the output 2\-D matrix, containing the maximal indices \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_math_a1c558fca5013d16a9df3adf2caa7c610}{\index{Math@{Math}!reduce\-Pick\-Index@{reduce\-Pick\-Index}}
+\index{reduce\-Pick\-Index@{reduce\-Pick\-Index}!Math@{Math}}
+\subsubsection[{reduce\-Pick\-Index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void Math\-::reduce\-Pick\-Index (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{in, }
+\item[{const cv\-::\-Mat \&}]{idx, }
+\item[{cv\-::\-Mat \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_math_a1c558fca5013d16a9df3adf2caa7c610}
+
+
+Reduce a vector of matrices via indexing. 
+
+Reduce a 3\-D matrix (represented as a vector of matrices using cv\-::split() ) to a 2\-D matrix by choosing a single element from each ray cast through the third dimension. This loosely emulates Matlab's matrix indexing functionality
+
+out\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} == in\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}\mbox{[} idx\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \mbox{]}, forall i,j
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the input 3\-D matrix \\
+\hline
+{\em idx} & the index to choose at each element (idx.\-size() == in\mbox{[}k\mbox{]}.size() forall k) \\
+\hline
+{\em out} & the flatten 2\-D output matrix \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_math_8hpp}{Math.\-hpp}\end{DoxyCompactItemize}

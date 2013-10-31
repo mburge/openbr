@@ -1,0 +1,154 @@
+\hypertarget{class_fourier_convolution_engine}{\section{Fourier\-Convolution\-Engine Class Reference}
+\label{class_fourier_convolution_engine}\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}}
+}
+
+
+{\ttfamily \#include $<$Fourier\-Convolution\-Engine.\-hpp$>$}
+
+Inheritance diagram for Fourier\-Convolution\-Engine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fourier_convolution_engine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_fourier_convolution_engine_a30d60a44b5767b43a4042171cf813fcd}{Fourier\-Convolution\-Engine} (const cv\-::\-Size \&size, int type, size\-\_\-t flen)
+\item 
+virtual \hyperlink{class_fourier_convolution_engine_a827dafdecfbb07891fbeee998af60236}{$\sim$\-Fourier\-Convolution\-Engine} ()
+\item 
+virtual void \hyperlink{class_fourier_convolution_engine_ad895979797d38a7c97e8dfcca9571fd2}{set\-Filters} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filters)
+\begin{DoxyCompactList}\small\item\em set the filters \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_fourier_convolution_engine_a30e84c8f67a198d318780e247efbbe41}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&responses)
+\begin{DoxyCompactList}\small\item\em Calculate the responses of a set of features to a set of filter experts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_fourier_convolution_engine_aaa0df468a2857c391459d3c9a53a6fc6}{convolve} (const cv\-::\-Mat \&feature, \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filter, cv\-::\-Mat \&\hyperlink{class_fourier_convolution_engine_a30e84c8f67a198d318780e247efbbe41}{pdf}, const size\-\_\-t channels)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\-::\-Size \hyperlink{class_fourier_convolution_engine_a2375ea1729ad2fe45fe6204130f3f39f}{size\-\_\-}
+\begin{DoxyCompactList}\small\item\em the largest expected image size \end{DoxyCompactList}\item 
+int \hyperlink{class_fourier_convolution_engine_a3e213d98d690b295eaa2866618f17933}{type\-\_\-}
+\begin{DoxyCompactList}\small\item\em the internally supported convolution type, taken from the filter type \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_fourier_convolution_engine_ab4322f51ce4a18ab5b7439abb5c96aef}{flen\-\_\-}
+\begin{DoxyCompactList}\small\item\em the number of layers to each filter \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \hyperlink{class_fourier_convolution_engine_ac6cf3c6a66e99bec7d8135f8069d79e3}{filters\-\_\-}
+\begin{DoxyCompactList}\small\item\em the internal representation of the filters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_fourier_convolution_engine_a30d60a44b5767b43a4042171cf813fcd}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}}
+\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{Fourier\-Convolution\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}Fourier\-Convolution\-Engine\-::\-Fourier\-Convolution\-Engine (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Size \&}]{size, }
+\item[{int}]{type, }
+\item[{size\-\_\-t}]{flen}
+\end{DoxyParamCaption}
+)}}\label{class_fourier_convolution_engine_a30d60a44b5767b43a4042171cf813fcd}
+\hypertarget{class_fourier_convolution_engine_a827dafdecfbb07891fbeee998af60236}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!$\sim$\-Fourier\-Convolution\-Engine@{$\sim$\-Fourier\-Convolution\-Engine}}
+\index{$\sim$\-Fourier\-Convolution\-Engine@{$\sim$\-Fourier\-Convolution\-Engine}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{$\sim$\-Fourier\-Convolution\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}Fourier\-Convolution\-Engine\-::$\sim$\-Fourier\-Convolution\-Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_fourier_convolution_engine_a827dafdecfbb07891fbeee998af60236}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_fourier_convolution_engine_aaa0df468a2857c391459d3c9a53a6fc6}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!convolve@{convolve}}
+\index{convolve@{convolve}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{convolve}]{\setlength{\rightskip}{0pt plus 5cm}void Fourier\-Convolution\-Engine\-::convolve (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{feature, }
+\item[{{\bf vector\-Mat} \&}]{filter, }
+\item[{cv\-::\-Mat \&}]{pdf, }
+\item[{const size\-\_\-t}]{channels}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_fourier_convolution_engine_aaa0df468a2857c391459d3c9a53a6fc6}
+\hypertarget{class_fourier_convolution_engine_a30e84c8f67a198d318780e247efbbe41}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!pdf@{pdf}}
+\index{pdf@{pdf}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{pdf}]{\setlength{\rightskip}{0pt plus 5cm}void Fourier\-Convolution\-Engine\-::pdf (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{features, }
+\item[{{\bf vector2\-D\-Mat} \&}]{responses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_fourier_convolution_engine_a30e84c8f67a198d318780e247efbbe41}
+
+
+Calculate the responses of a set of features to a set of filter experts. 
+
+A response represents the likelihood of the part appearing at each location of the feature map. \hyperlink{class_parts}{Parts} are support vector machines (S\-V\-Ms) represented as filters. The convolution of a filter with a feature produces a probability density function (pdf) of part location 
+\begin{DoxyParams}{Parameters}
+{\em features} & the input features (at different scales, and by extension, size) \\
+\hline
+{\em responses} & the vector of responses (pdfs) to return \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}{I\-Convolution\-Engine}.
+
+\hypertarget{class_fourier_convolution_engine_ad895979797d38a7c97e8dfcca9571fd2}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!set\-Filters@{set\-Filters}}
+\index{set\-Filters@{set\-Filters}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{set\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}void Fourier\-Convolution\-Engine\-::set\-Filters (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{filters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_fourier_convolution_engine_ad895979797d38a7c97e8dfcca9571fd2}
+
+
+set the filters 
+
+given a set of filters, split each filter channel into a plane, in preparation for convolution
+
+
+\begin{DoxyParams}{Parameters}
+{\em filters} & the filters \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_convolution_engine_a3570aae351b5fcb93bcd87a06c65ea0a}{I\-Convolution\-Engine}.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_fourier_convolution_engine_ac6cf3c6a66e99bec7d8135f8069d79e3}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!filters\-\_\-@{filters\-\_\-}}
+\index{filters\-\_\-@{filters\-\_\-}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{filters\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-D\-Mat} Fourier\-Convolution\-Engine\-::filters\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_fourier_convolution_engine_ac6cf3c6a66e99bec7d8135f8069d79e3}
+
+
+the internal representation of the filters 
+
+\hypertarget{class_fourier_convolution_engine_ab4322f51ce4a18ab5b7439abb5c96aef}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!flen\-\_\-@{flen\-\_\-}}
+\index{flen\-\_\-@{flen\-\_\-}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{flen\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Fourier\-Convolution\-Engine\-::flen\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_fourier_convolution_engine_ab4322f51ce4a18ab5b7439abb5c96aef}
+
+
+the number of layers to each filter 
+
+\hypertarget{class_fourier_convolution_engine_a2375ea1729ad2fe45fe6204130f3f39f}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!size\-\_\-@{size\-\_\-}}
+\index{size\-\_\-@{size\-\_\-}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{size\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Size Fourier\-Convolution\-Engine\-::size\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_fourier_convolution_engine_a2375ea1729ad2fe45fe6204130f3f39f}
+
+
+the largest expected image size 
+
+\hypertarget{class_fourier_convolution_engine_a3e213d98d690b295eaa2866618f17933}{\index{Fourier\-Convolution\-Engine@{Fourier\-Convolution\-Engine}!type\-\_\-@{type\-\_\-}}
+\index{type\-\_\-@{type\-\_\-}!FourierConvolutionEngine@{Fourier\-Convolution\-Engine}}
+\subsubsection[{type\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Fourier\-Convolution\-Engine\-::type\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_fourier_convolution_engine_a3e213d98d690b295eaa2866618f17933}
+
+
+the internally supported convolution type, taken from the filter type 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_fourier_convolution_engine_8hpp}{Fourier\-Convolution\-Engine.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_fourier_convolution_engine_8cpp}{Fourier\-Convolution\-Engine.\-cpp}\end{DoxyCompactItemize}

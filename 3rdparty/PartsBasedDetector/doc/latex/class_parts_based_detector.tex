@@ -1,0 +1,179 @@
+\hypertarget{class_parts_based_detector}{\section{Parts\-Based\-Detector$<$ T $>$ Class Template Reference}
+\label{class_parts_based_detector}\index{Parts\-Based\-Detector$<$ T $>$@{Parts\-Based\-Detector$<$ T $>$}}
+}
+
+
+The main object detection class \hyperlink{class_parts_based_detector}{Parts\-Based\-Detector} is the main entry point for detecting objects. It has a single method \hyperlink{class_parts_based_detector_a351a499cb2d7ab23d388a34c1c8f38a0}{distribute\-Model()} for setting up the detector parameters from a deserialized model, and a method \hyperlink{class_parts_based_detector_a70c77effade6c39b06ddc0102973a1f8}{detect()} for running the detection pipeline.  
+
+
+
+
+{\ttfamily \#include $<$Parts\-Based\-Detector.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parts_based_detector_ac24d74d215b43fcc4101077f818e33a2}{Parts\-Based\-Detector} ()
+\item 
+virtual \hyperlink{class_parts_based_detector_a3628d7bb534a709bb130027bbc61e257}{$\sim$\-Parts\-Based\-Detector} ()
+\item 
+const std\-::string \& \hyperlink{class_parts_based_detector_aded2fe8d8b8b12f897d083123fe248a9}{name} (void) const 
+\item 
+void \hyperlink{class_parts_based_detector_a70c77effade6c39b06ddc0102973a1f8}{detect} (const cv\-::\-Mat \&im, std\-::vector$<$ \hyperlink{class_candidate}{Candidate} $>$ \&candidates)
+\begin{DoxyCompactList}\small\item\em search an image for potential candidates \end{DoxyCompactList}\item 
+void \hyperlink{class_parts_based_detector_ac286523b99f65a55a7e84fe9e2c2e662}{detect} (const cv\-::\-Mat \&im, const cv\-::\-Mat \&depth, std\-::vector$<$ \hyperlink{class_candidate}{Candidate} $>$ \&candidates)
+\item 
+void \hyperlink{class_parts_based_detector_a351a499cb2d7ab23d388a34c1c8f38a0}{distribute\-Model} (\hyperlink{class_model}{Model} \&model)
+\begin{DoxyCompactList}\small\item\em Distribute the model parameters to the \hyperlink{class_parts_based_detector}{Parts\-Based\-Detector} classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_parts_based_detector_a776c766541fb4c2974c6b40a8f4f1c2f}{name\-\_\-}
+\begin{DoxyCompactList}\small\item\em the name of the Part detector \end{DoxyCompactList}\item 
+boost\-::scoped\-\_\-ptr$<$ \hyperlink{class_i_features}{I\-Features} $>$ \hyperlink{class_parts_based_detector_a6242f9b02fcb1a440cc431f2fc15521f}{features\-\_\-}
+\begin{DoxyCompactList}\small\item\em produces features, feature pyramids and compares features with \hyperlink{class_parts}{Parts} \end{DoxyCompactList}\item 
+boost\-::scoped\-\_\-ptr\\*
+$<$ \hyperlink{class_i_convolution_engine}{I\-Convolution\-Engine} $>$ \hyperlink{class_parts_based_detector_ad06eb05d590004fe4f6940544b90b2ba}{convolution\-\_\-engine\-\_\-}
+\begin{DoxyCompactList}\small\item\em compares features with \hyperlink{class_parts}{Parts} \end{DoxyCompactList}\item 
+\hyperlink{class_dynamic_program}{Dynamic\-Program}$<$ T $>$ \hyperlink{class_parts_based_detector_af78da81781a7ad393e9e150f02ecd129}{dp\-\_\-}
+\begin{DoxyCompactList}\small\item\em dynamic program to predict part positions and candidate likelihoods from raw scores \end{DoxyCompactList}\item 
+\hyperlink{class_parts}{Parts} \hyperlink{class_parts_based_detector_ad548ec9214858535eb6a0f3783d11664}{parts\-\_\-}
+\begin{DoxyCompactList}\small\item\em the tree of \hyperlink{class_parts}{Parts} \end{DoxyCompactList}\item 
+\hyperlink{class_search_space_pruning}{Search\-Space\-Pruning}$<$ T $>$ \hyperlink{class_parts_based_detector_aae91c693f9d01e3e6cbd552d7f81e474}{ssp\-\_\-}
+\begin{DoxyCompactList}\small\item\em the search space pruner \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Parts\-Based\-Detector$<$ T $>$}
+
+The main object detection class \hyperlink{class_parts_based_detector}{Parts\-Based\-Detector} is the main entry point for detecting objects. It has a single method \hyperlink{class_parts_based_detector_a351a499cb2d7ab23d388a34c1c8f38a0}{distribute\-Model()} for setting up the detector parameters from a deserialized model, and a method \hyperlink{class_parts_based_detector_a70c77effade6c39b06ddc0102973a1f8}{detect()} for running the detection pipeline. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the detector precision. Should be one of float or double. On modern 64-\/bit machines, the latter will likely be just as fast. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_parts_based_detector_ac24d74d215b43fcc4101077f818e33a2}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!Parts\-Based\-Detector@{Parts\-Based\-Detector}}
+\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{Parts\-Based\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Parts\-Based\-Detector}$<$ T $>$\-::{\bf Parts\-Based\-Detector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_parts_based_detector_ac24d74d215b43fcc4101077f818e33a2}
+\hypertarget{class_parts_based_detector_a3628d7bb534a709bb130027bbc61e257}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!$\sim$\-Parts\-Based\-Detector@{$\sim$\-Parts\-Based\-Detector}}
+\index{$\sim$\-Parts\-Based\-Detector@{$\sim$\-Parts\-Based\-Detector}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{$\sim$\-Parts\-Based\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual {\bf Parts\-Based\-Detector}$<$ T $>$\-::$\sim${\bf Parts\-Based\-Detector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_parts_based_detector_a3628d7bb534a709bb130027bbc61e257}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_parts_based_detector_a70c77effade6c39b06ddc0102973a1f8}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!detect@{detect}}
+\index{detect@{detect}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{detect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Parts\-Based\-Detector}$<$ T $>$\-::detect (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{std\-::vector$<$ {\bf Candidate} $>$ \&}]{candidates}
+\end{DoxyParamCaption}
+)}}\label{class_parts_based_detector_a70c77effade6c39b06ddc0102973a1f8}
+
+
+search an image for potential candidates 
+
+calls detect(const Mat\& im, const Mat\&depth=Mat(), vector$<$\-Candidate$>$\& candidates);
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & the input color or grayscale image \\
+\hline
+{\em candidates} & the output vector of detection candidates above the threshold \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_parts_based_detector_ac286523b99f65a55a7e84fe9e2c2e662}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!detect@{detect}}
+\index{detect@{detect}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{detect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Parts\-Based\-Detector}$<$ T $>$\-::detect (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const cv\-::\-Mat \&}]{depth, }
+\item[{std\-::vector$<$ {\bf Candidate} $>$ \&}]{candidates}
+\end{DoxyParamCaption}
+)}}\label{class_parts_based_detector_ac286523b99f65a55a7e84fe9e2c2e662}
+\hypertarget{class_parts_based_detector_a351a499cb2d7ab23d388a34c1c8f38a0}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!distribute\-Model@{distribute\-Model}}
+\index{distribute\-Model@{distribute\-Model}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{distribute\-Model}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Parts\-Based\-Detector}$<$ T $>$\-::distribute\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf Model} \&}]{model}
+\end{DoxyParamCaption}
+)}}\label{class_parts_based_detector_a351a499cb2d7ab23d388a34c1c8f38a0}
+
+
+Distribute the model parameters to the \hyperlink{class_parts_based_detector}{Parts\-Based\-Detector} classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the monolithic model containing the deserialization of all model parameters \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_parts_based_detector_aded2fe8d8b8b12f897d083123fe248a9}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!name@{name}}
+\index{name@{name}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\-::string\& {\bf Parts\-Based\-Detector}$<$ T $>$\-::name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_parts_based_detector_aded2fe8d8b8b12f897d083123fe248a9}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_parts_based_detector_ad06eb05d590004fe4f6940544b90b2ba}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!convolution\-\_\-engine\-\_\-@{convolution\-\_\-engine\-\_\-}}
+\index{convolution\-\_\-engine\-\_\-@{convolution\-\_\-engine\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{convolution\-\_\-engine\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ boost\-::scoped\-\_\-ptr$<${\bf I\-Convolution\-Engine}$>$ {\bf Parts\-Based\-Detector}$<$ T $>$\-::convolution\-\_\-engine\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_ad06eb05d590004fe4f6940544b90b2ba}
+
+
+compares features with \hyperlink{class_parts}{Parts} 
+
+\hypertarget{class_parts_based_detector_af78da81781a7ad393e9e150f02ecd129}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!dp\-\_\-@{dp\-\_\-}}
+\index{dp\-\_\-@{dp\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{dp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Dynamic\-Program}$<$T$>$ {\bf Parts\-Based\-Detector}$<$ T $>$\-::dp\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_af78da81781a7ad393e9e150f02ecd129}
+
+
+dynamic program to predict part positions and candidate likelihoods from raw scores 
+
+\hypertarget{class_parts_based_detector_a6242f9b02fcb1a440cc431f2fc15521f}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!features\-\_\-@{features\-\_\-}}
+\index{features\-\_\-@{features\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{features\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ boost\-::scoped\-\_\-ptr$<${\bf I\-Features}$>$ {\bf Parts\-Based\-Detector}$<$ T $>$\-::features\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_a6242f9b02fcb1a440cc431f2fc15521f}
+
+
+produces features, feature pyramids and compares features with \hyperlink{class_parts}{Parts} 
+
+\hypertarget{class_parts_based_detector_a776c766541fb4c2974c6b40a8f4f1c2f}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!name\-\_\-@{name\-\_\-}}
+\index{name\-\_\-@{name\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\-::string {\bf Parts\-Based\-Detector}$<$ T $>$\-::name\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_a776c766541fb4c2974c6b40a8f4f1c2f}
+
+
+the name of the Part detector 
+
+\hypertarget{class_parts_based_detector_ad548ec9214858535eb6a0f3783d11664}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!parts\-\_\-@{parts\-\_\-}}
+\index{parts\-\_\-@{parts\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{parts\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Parts} {\bf Parts\-Based\-Detector}$<$ T $>$\-::parts\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_ad548ec9214858535eb6a0f3783d11664}
+
+
+the tree of \hyperlink{class_parts}{Parts} 
+
+\hypertarget{class_parts_based_detector_aae91c693f9d01e3e6cbd552d7f81e474}{\index{Parts\-Based\-Detector@{Parts\-Based\-Detector}!ssp\-\_\-@{ssp\-\_\-}}
+\index{ssp\-\_\-@{ssp\-\_\-}!PartsBasedDetector@{Parts\-Based\-Detector}}
+\subsubsection[{ssp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Search\-Space\-Pruning}$<$T$>$ {\bf Parts\-Based\-Detector}$<$ T $>$\-::ssp\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_parts_based_detector_aae91c693f9d01e3e6cbd552d7f81e474}
+
+
+the search space pruner 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_parts_based_detector_8hpp}{Parts\-Based\-Detector.\-hpp}\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/src/\hyperlink{_parts_based_detector_8cpp}{Parts\-Based\-Detector.\-cpp}\end{DoxyCompactItemize}

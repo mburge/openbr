@@ -1,0 +1,87 @@
+\hypertarget{class_i_convolution_engine}{\section{I\-Convolution\-Engine Class Reference}
+\label{class_i_convolution_engine}\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}}
+}
+
+
+{\ttfamily \#include $<$I\-Convolution\-Engine.\-hpp$>$}
+
+Inheritance diagram for I\-Convolution\-Engine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_convolution_engine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_convolution_engine_a554cb87e8dbd32552defd43549b9c1b3}{$\sim$\-I\-Convolution\-Engine} ()
+\item 
+virtual void \hyperlink{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}{pdf} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&features, \hyperlink{types_8hpp_a33cacb85be7b8df3dc0b67d5d849f4cc}{vector2\-D\-Mat} \&responses)=0
+\begin{DoxyCompactList}\small\item\em probability density function \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_convolution_engine_a3570aae351b5fcb93bcd87a06c65ea0a}{set\-Filters} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filters)=0
+\begin{DoxyCompactList}\small\item\em set the convolve engine filters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_convolution_engine_a554cb87e8dbd32552defd43549b9c1b3}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!$\sim$\-I\-Convolution\-Engine@{$\sim$\-I\-Convolution\-Engine}}
+\index{$\sim$\-I\-Convolution\-Engine@{$\sim$\-I\-Convolution\-Engine}!IConvolutionEngine@{I\-Convolution\-Engine}}
+\subsubsection[{$\sim$\-I\-Convolution\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\-Convolution\-Engine\-::$\sim$\-I\-Convolution\-Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_convolution_engine_a554cb87e8dbd32552defd43549b9c1b3}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!pdf@{pdf}}
+\index{pdf@{pdf}!IConvolutionEngine@{I\-Convolution\-Engine}}
+\subsubsection[{pdf}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Convolution\-Engine\-::pdf (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{features, }
+\item[{{\bf vector2\-D\-Mat} \&}]{responses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}
+
+
+probability density function 
+
+A custom convolution-\/type operation for producing a map of probability density functions where each pixel indicates the likelihood of a positive detection
+
+
+\begin{DoxyParams}{Parameters}
+{\em features} & the input pyramid of features \\
+\hline
+{\em responses} & a 2\-D vector of pdfs, 1st dimension across scale, 2nd dimension across filter \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_fourier_convolution_engine_a30e84c8f67a198d318780e247efbbe41}{Fourier\-Convolution\-Engine}, and \hyperlink{class_spatial_convolution_engine_a6db3b5e9428ee74e1b4e9e7f7111cad5}{Spatial\-Convolution\-Engine}.
+
+\hypertarget{class_i_convolution_engine_a3570aae351b5fcb93bcd87a06c65ea0a}{\index{I\-Convolution\-Engine@{I\-Convolution\-Engine}!set\-Filters@{set\-Filters}}
+\index{set\-Filters@{set\-Filters}!IConvolutionEngine@{I\-Convolution\-Engine}}
+\subsubsection[{set\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Convolution\-Engine\-::set\-Filters (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{filters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_convolution_engine_a3570aae351b5fcb93bcd87a06c65ea0a}
+
+
+set the convolve engine filters 
+
+In many situations, the filters are static during operation of the detector so we can take advantage of some optimizations such as changing the memory layout of the filters, or shifting the filters to the G\-P\-U, etc. This function enables such a facility, and must necessarily be called before \hyperlink{class_i_convolution_engine_ab5aaabb634629a714d397a6c1a9c9400}{pdf()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filters} & the vector of filters \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_fourier_convolution_engine_ad895979797d38a7c97e8dfcca9571fd2}{Fourier\-Convolution\-Engine}, and \hyperlink{class_spatial_convolution_engine_ad27aad7b65dfa3ec6a617eed96c01d9c}{Spatial\-Convolution\-Engine}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_i_convolution_engine_8hpp}{I\-Convolution\-Engine.\-hpp}\end{DoxyCompactItemize}

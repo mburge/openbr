@@ -1,0 +1,471 @@
+\hypertarget{class_component_part}{\section{Component\-Part Class Reference}
+\label{class_component_part}\index{Component\-Part@{Component\-Part}}
+}
+
+
+\hyperlink{class_parts}{Parts} tree for a single component of the model.  
+
+
+
+
+{\ttfamily \#include $<$Parts.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_component_part_add8b8160fe16adc84ba35f2ea9434ea1}{Component\-Part} ()
+\begin{DoxyCompactList}\small\item\em default constructor, used for preallocating std\-::vectors, etc \end{DoxyCompactList}\item 
+\hyperlink{class_component_part_a922c7a82e491009d996ac41beb947b40}{Component\-Part} (const \hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&filtersw, const \hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \&filtersi, const \hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \&biasw, const \hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \&\hyperlink{class_component_part_a8c5fde49dae3ab679454a106a9e41be8}{biasi}, const \hyperlink{types_8hpp_ac468fcf6870d6563ac8fa3669845afcc}{vector\-Point} \&anchors, const \hyperlink{types_8hpp_a94f2d563f3725231a6f684b4dce4f1ef}{vector2\-Df} \&\hyperlink{class_component_part_a9dfb0fd739381be92d5ce2eab5054681}{defw}, const \hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \&\hyperlink{class_component_part_ae1d71f86350d8757e33bbeb1af85f4fa}{defi}, const \hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} \&defid, const \hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} \&biasid, const \hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} \&filterid, const \hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} \&parentid, int \hyperlink{class_component_part_abe27079725188a3cb881459a6ba0abc5}{self})
+\begin{DoxyCompactList}\small\item\em internal constructor, called by \hyperlink{class_parts}{Parts()} \end{DoxyCompactList}\item 
+\hyperlink{class_component_part_ac0e19a42768687553d539fef60102310}{Component\-Part} (const \hyperlink{class_component_part}{Component\-Part} \&other, int \hyperlink{class_component_part_abe27079725188a3cb881459a6ba0abc5}{self})
+\begin{DoxyCompactList}\small\item\em internal copy constructor, used to traverse to new nodes in the tree (parent, children or random access) \end{DoxyCompactList}\item 
+virtual \hyperlink{class_component_part_adc9d76c5af40cbe00a655361f1b61845}{$\sim$\-Component\-Part} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_component_part_ad1160c379d088632935b97b774ddb3cc}{nparts} (void) const 
+\begin{DoxyCompactList}\small\item\em get the number of parts in this tree \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_component_part_a12c4456469ab2ee4ef11d37f6c0553b5}{nmixtures} (void) const 
+\begin{DoxyCompactList}\small\item\em get the number of mixtures for the current part \end{DoxyCompactList}\item 
+int \hyperlink{class_component_part_abe27079725188a3cb881459a6ba0abc5}{self} (void) const 
+\begin{DoxyCompactList}\small\item\em the current flattened tree index \end{DoxyCompactList}\item 
+const cv\-::\-Mat \& \hyperlink{class_component_part_ae86d0334cd75890b5d2ed45ca2b1683c}{filter} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em return the filter for a part \end{DoxyCompactList}\item 
+void \hyperlink{class_component_part_adcad5d5ac3b60c803755813a6872761b}{filters} (\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&out) const 
+\begin{DoxyCompactList}\small\item\em return the filters for all mixtures of a part \end{DoxyCompactList}\item 
+\hyperlink{class_component_part}{Component\-Part} \hyperlink{class_component_part_a563956730a05cb34cc41278b6df1fa81}{parent} (void) const 
+\begin{DoxyCompactList}\small\item\em the current part's parent \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_component_part}{Component\-Part} $>$ \hyperlink{class_component_part_acfa581b85329b7bf7eb4d10c2552db57}{children} (void) const 
+\begin{DoxyCompactList}\small\item\em the current part's children \end{DoxyCompactList}\item 
+cv\-::\-Mat \& \hyperlink{class_component_part_a4b037c9e270a104116dd5f886c959006}{score} (\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} \&scores, size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part score \end{DoxyCompactList}\item 
+int \hyperlink{class_component_part_a93c4898f36cdcc92fe038ec1530b1d57}{filteri} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's filter index \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_component_part_ab52f0f978c3e01c2186e5a8c69f9a09a}{bias} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's bias \end{DoxyCompactList}\item 
+int \hyperlink{class_component_part_a8c5fde49dae3ab679454a106a9e41be8}{biasi} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's bias index \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_component_part_a9dfb0fd739381be92d5ce2eab5054681}{defw} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's deformation weights \end{DoxyCompactList}\item 
+int \hyperlink{class_component_part_ae1d71f86350d8757e33bbeb1af85f4fa}{defi} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's deformation indices \end{DoxyCompactList}\item 
+cv\-::\-Point \hyperlink{class_component_part_a7e2cdd67c7a6a7c66826ac9b5c4ce372}{anchor} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the part's anchor (relative to its parent part) \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_component_part_a2a0785678aa70d37132c13671204bb55}{xsize} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the x size (width) of the part \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{class_component_part_a7db69e2def014c1b9c0e7ea9d7315354}{ysize} (size\-\_\-t mixture=0) const 
+\begin{DoxyCompactList}\small\item\em the y size (height) of the part \end{DoxyCompactList}\item 
+bool \hyperlink{class_component_part_a5c2cb9582276cb9cfa11cd9ba95aac85}{is\-Root} (void) const 
+\begin{DoxyCompactList}\small\item\em is the current part the root \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8hpp_a3207a7addcfa415d1c83622febcb1e9b}{vector\-Mat} const $\ast$ \hyperlink{class_component_part_a301c8633b1e8db3f30436c0ba0fc140d}{filtersw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the filter weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} const $\ast$ \hyperlink{class_component_part_ab27e6ea4e7d5b1342ca8b55afa797da9}{filtersi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the filter indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} const $\ast$ \hyperlink{class_component_part_a361de825869afbad383a5b4ba1fbca31}{biasw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the bias weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} const $\ast$ \hyperlink{class_component_part_abad6d42fe698b1755bdc1f07a582bc23}{biasi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the bias indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_ac468fcf6870d6563ac8fa3669845afcc}{vector\-Point} const $\ast$ \hyperlink{class_component_part_a3809f39d41baf1990c72b12742ee650e}{anchors\-\_\-}
+\begin{DoxyCompactList}\small\item\em the anchors (part position relative to parent) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a94f2d563f3725231a6f684b4dce4f1ef}{vector2\-Df} const $\ast$ \hyperlink{class_component_part_a4841935dcac81d3e9c97c95722a44ef8}{defw\-\_\-}
+\begin{DoxyCompactList}\small\item\em the deformation weights \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} const $\ast$ \hyperlink{class_component_part_a814b56fc405db36e4b3a7dd1ffa89f7b}{defi\-\_\-}
+\begin{DoxyCompactList}\small\item\em the deformation indices \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} const $\ast$ \hyperlink{class_component_part_ab408f9bd78053f571402b933b56a355c}{defid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for deformation (weights, indices and anchors) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} const $\ast$ \hyperlink{class_component_part_a3251ad22cd72fb9ccf7fe18e597f84a0}{biasid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the bias (weights and indices) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a93a5e2cfd40d1ff1f10d8bbf11884c41}{vector2\-Di} const $\ast$ \hyperlink{class_component_part_aba9023613a7dd450b2403fd7c1e708ec}{filterid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the filters (weights and indices) \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a44529587d60e73bf0e689a82e5e70a55}{vectori} const $\ast$ \hyperlink{class_component_part_a3c75a843f04e4b3d56e4461f8ef803fa}{parentid\-\_\-}
+\begin{DoxyCompactList}\small\item\em indexing schema for the parent (for biasid\-\_\- and filterid\-\_\-) \end{DoxyCompactList}\item 
+int \hyperlink{class_component_part_a814391cfc1e60223f270d06e3bf2f8b6}{self\-\_\-}
+\begin{DoxyCompactList}\small\item\em the current part index \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_parts}{Parts} tree for a single component of the model. 
+
+\hyperlink{class_component_part}{Component\-Part} describes a tree of parts for a component of the model. The parts themselves are held within one monolithic pool, so the \hyperlink{class_component_part}{Component\-Part} obfuscates the indexing into this pool 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_component_part_add8b8160fe16adc84ba35f2ea9434ea1}{\index{Component\-Part@{Component\-Part}!Component\-Part@{Component\-Part}}
+\index{Component\-Part@{Component\-Part}!ComponentPart@{Component\-Part}}
+\subsubsection[{Component\-Part}]{\setlength{\rightskip}{0pt plus 5cm}Component\-Part\-::\-Component\-Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_add8b8160fe16adc84ba35f2ea9434ea1}
+
+
+default constructor, used for preallocating std\-::vectors, etc 
+
+\hypertarget{class_component_part_a922c7a82e491009d996ac41beb947b40}{\index{Component\-Part@{Component\-Part}!Component\-Part@{Component\-Part}}
+\index{Component\-Part@{Component\-Part}!ComponentPart@{Component\-Part}}
+\subsubsection[{Component\-Part}]{\setlength{\rightskip}{0pt plus 5cm}Component\-Part\-::\-Component\-Part (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector\-Mat} \&}]{filtersw, }
+\item[{const {\bf vectori} \&}]{filtersi, }
+\item[{const {\bf vectorf} \&}]{biasw, }
+\item[{const {\bf vectori} \&}]{biasi, }
+\item[{const {\bf vector\-Point} \&}]{anchors, }
+\item[{const {\bf vector2\-Df} \&}]{defw, }
+\item[{const {\bf vectori} \&}]{defi, }
+\item[{const {\bf vector2\-Di} \&}]{defid, }
+\item[{const {\bf vector2\-Di} \&}]{biasid, }
+\item[{const {\bf vector2\-Di} \&}]{filterid, }
+\item[{const {\bf vectori} \&}]{parentid, }
+\item[{int}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a922c7a82e491009d996ac41beb947b40}
+
+
+internal constructor, called by \hyperlink{class_parts}{Parts()} 
+
+\hypertarget{class_component_part_ac0e19a42768687553d539fef60102310}{\index{Component\-Part@{Component\-Part}!Component\-Part@{Component\-Part}}
+\index{Component\-Part@{Component\-Part}!ComponentPart@{Component\-Part}}
+\subsubsection[{Component\-Part}]{\setlength{\rightskip}{0pt plus 5cm}Component\-Part\-::\-Component\-Part (
+\begin{DoxyParamCaption}
+\item[{const {\bf Component\-Part} \&}]{other, }
+\item[{int}]{self}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_ac0e19a42768687553d539fef60102310}
+
+
+internal copy constructor, used to traverse to new nodes in the tree (parent, children or random access) 
+
+\hypertarget{class_component_part_adc9d76c5af40cbe00a655361f1b61845}{\index{Component\-Part@{Component\-Part}!$\sim$\-Component\-Part@{$\sim$\-Component\-Part}}
+\index{$\sim$\-Component\-Part@{$\sim$\-Component\-Part}!ComponentPart@{Component\-Part}}
+\subsubsection[{$\sim$\-Component\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual Component\-Part\-::$\sim$\-Component\-Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_component_part_adc9d76c5af40cbe00a655361f1b61845}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_component_part_a7e2cdd67c7a6a7c66826ac9b5c4ce372}{\index{Component\-Part@{Component\-Part}!anchor@{anchor}}
+\index{anchor@{anchor}!ComponentPart@{Component\-Part}}
+\subsubsection[{anchor}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Point Component\-Part\-::anchor (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a7e2cdd67c7a6a7c66826ac9b5c4ce372}
+
+
+the part's anchor (relative to its parent part) 
+
+\hypertarget{class_component_part_ab52f0f978c3e01c2186e5a8c69f9a09a}{\index{Component\-Part@{Component\-Part}!bias@{bias}}
+\index{bias@{bias}!ComponentPart@{Component\-Part}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf} Component\-Part\-::bias (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_ab52f0f978c3e01c2186e5a8c69f9a09a}
+
+
+the part's bias 
+
+\hypertarget{class_component_part_a8c5fde49dae3ab679454a106a9e41be8}{\index{Component\-Part@{Component\-Part}!biasi@{biasi}}
+\index{biasi@{biasi}!ComponentPart@{Component\-Part}}
+\subsubsection[{biasi}]{\setlength{\rightskip}{0pt plus 5cm}int Component\-Part\-::biasi (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a8c5fde49dae3ab679454a106a9e41be8}
+
+
+the part's bias index 
+
+\hypertarget{class_component_part_acfa581b85329b7bf7eb4d10c2552db57}{\index{Component\-Part@{Component\-Part}!children@{children}}
+\index{children@{children}!ComponentPart@{Component\-Part}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Component\-Part}$>$ Component\-Part\-::children (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_acfa581b85329b7bf7eb4d10c2552db57}
+
+
+the current part's children 
+
+\begin{DoxyReturn}{Returns}
+a vector of Component\-Parts, where each part's parent points to the current part 
+\end{DoxyReturn}
+\hypertarget{class_component_part_ae1d71f86350d8757e33bbeb1af85f4fa}{\index{Component\-Part@{Component\-Part}!defi@{defi}}
+\index{defi@{defi}!ComponentPart@{Component\-Part}}
+\subsubsection[{defi}]{\setlength{\rightskip}{0pt plus 5cm}int Component\-Part\-::defi (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_ae1d71f86350d8757e33bbeb1af85f4fa}
+
+
+the part's deformation indices 
+
+\hypertarget{class_component_part_a9dfb0fd739381be92d5ce2eab5054681}{\index{Component\-Part@{Component\-Part}!defw@{defw}}
+\index{defw@{defw}!ComponentPart@{Component\-Part}}
+\subsubsection[{defw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf} Component\-Part\-::defw (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a9dfb0fd739381be92d5ce2eab5054681}
+
+
+the part's deformation weights 
+
+\hypertarget{class_component_part_ae86d0334cd75890b5d2ed45ca2b1683c}{\index{Component\-Part@{Component\-Part}!filter@{filter}}
+\index{filter@{filter}!ComponentPart@{Component\-Part}}
+\subsubsection[{filter}]{\setlength{\rightskip}{0pt plus 5cm}const cv\-::\-Mat\& Component\-Part\-::filter (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_ae86d0334cd75890b5d2ed45ca2b1683c}
+
+
+return the filter for a part 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixture} & the part mixture of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the associated filter 
+\end{DoxyReturn}
+\hypertarget{class_component_part_a93c4898f36cdcc92fe038ec1530b1d57}{\index{Component\-Part@{Component\-Part}!filteri@{filteri}}
+\index{filteri@{filteri}!ComponentPart@{Component\-Part}}
+\subsubsection[{filteri}]{\setlength{\rightskip}{0pt plus 5cm}int Component\-Part\-::filteri (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a93c4898f36cdcc92fe038ec1530b1d57}
+
+
+the part's filter index 
+
+\hypertarget{class_component_part_adcad5d5ac3b60c803755813a6872761b}{\index{Component\-Part@{Component\-Part}!filters@{filters}}
+\index{filters@{filters}!ComponentPart@{Component\-Part}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}void Component\-Part\-::filters (
+\begin{DoxyParamCaption}
+\item[{{\bf vector\-Mat} \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_adcad5d5ac3b60c803755813a6872761b}
+
+
+return the filters for all mixtures of a part 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the filters to return \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_component_part_a5c2cb9582276cb9cfa11cd9ba95aac85}{\index{Component\-Part@{Component\-Part}!is\-Root@{is\-Root}}
+\index{is\-Root@{is\-Root}!ComponentPart@{Component\-Part}}
+\subsubsection[{is\-Root}]{\setlength{\rightskip}{0pt plus 5cm}bool Component\-Part\-::is\-Root (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a5c2cb9582276cb9cfa11cd9ba95aac85}
+
+
+is the current part the root 
+
+\hypertarget{class_component_part_a12c4456469ab2ee4ef11d37f6c0553b5}{\index{Component\-Part@{Component\-Part}!nmixtures@{nmixtures}}
+\index{nmixtures@{nmixtures}!ComponentPart@{Component\-Part}}
+\subsubsection[{nmixtures}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Component\-Part\-::nmixtures (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a12c4456469ab2ee4ef11d37f6c0553b5}
+
+
+get the number of mixtures for the current part 
+
+\begin{DoxyReturn}{Returns}
+the number of mixtures. Note that not all components and parts will have the same number of mixtures 
+\end{DoxyReturn}
+\hypertarget{class_component_part_ad1160c379d088632935b97b774ddb3cc}{\index{Component\-Part@{Component\-Part}!nparts@{nparts}}
+\index{nparts@{nparts}!ComponentPart@{Component\-Part}}
+\subsubsection[{nparts}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Component\-Part\-::nparts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_ad1160c379d088632935b97b774ddb3cc}
+
+
+get the number of parts in this tree 
+
+\begin{DoxyReturn}{Returns}
+the number of parts 
+\end{DoxyReturn}
+\hypertarget{class_component_part_a563956730a05cb34cc41278b6df1fa81}{\index{Component\-Part@{Component\-Part}!parent@{parent}}
+\index{parent@{parent}!ComponentPart@{Component\-Part}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Component\-Part} Component\-Part\-::parent (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a563956730a05cb34cc41278b6df1fa81}
+
+
+the current part's parent 
+
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{class_component_part}{Component\-Part} which points to the parent of the current part 
+\end{DoxyReturn}
+\hypertarget{class_component_part_a4b037c9e270a104116dd5f886c959006}{\index{Component\-Part@{Component\-Part}!score@{score}}
+\index{score@{score}!ComponentPart@{Component\-Part}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat\& Component\-Part\-::score (
+\begin{DoxyParamCaption}
+\item[{{\bf vector\-Mat} \&}]{scores, }
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a4b037c9e270a104116dd5f886c959006}
+
+
+the part score 
+
+this method leverages the internal index translation to retrieve a score from an input vector of scores. The scores are assumed to have the same ordering as filtersw\-\_\-
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & the input vector of scores \\
+\hline
+{\em mixture} & the part mixture to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the associated score for this part's mixture 
+\end{DoxyReturn}
+\hypertarget{class_component_part_abe27079725188a3cb881459a6ba0abc5}{\index{Component\-Part@{Component\-Part}!self@{self}}
+\index{self@{self}!ComponentPart@{Component\-Part}}
+\subsubsection[{self}]{\setlength{\rightskip}{0pt plus 5cm}int Component\-Part\-::self (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_abe27079725188a3cb881459a6ba0abc5}
+
+
+the current flattened tree index 
+
+\begin{DoxyReturn}{Returns}
+the current flattened tree index. \hyperlink{class_component_part_abe27079725188a3cb881459a6ba0abc5}{self()} == 0 is the root part 
+\end{DoxyReturn}
+\hypertarget{class_component_part_a2a0785678aa70d37132c13671204bb55}{\index{Component\-Part@{Component\-Part}!xsize@{xsize}}
+\index{xsize@{xsize}!ComponentPart@{Component\-Part}}
+\subsubsection[{xsize}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Component\-Part\-::xsize (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a2a0785678aa70d37132c13671204bb55}
+
+
+the x size (width) of the part 
+
+\hypertarget{class_component_part_a7db69e2def014c1b9c0e7ea9d7315354}{\index{Component\-Part@{Component\-Part}!ysize@{ysize}}
+\index{ysize@{ysize}!ComponentPart@{Component\-Part}}
+\subsubsection[{ysize}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Component\-Part\-::ysize (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{mixture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_component_part_a7db69e2def014c1b9c0e7ea9d7315354}
+
+
+the y size (height) of the part 
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_component_part_a3809f39d41baf1990c72b12742ee650e}{\index{Component\-Part@{Component\-Part}!anchors\-\_\-@{anchors\-\_\-}}
+\index{anchors\-\_\-@{anchors\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{anchors\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Point} const$\ast$ Component\-Part\-::anchors\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a3809f39d41baf1990c72b12742ee650e}
+
+
+the anchors (part position relative to parent) 
+
+\hypertarget{class_component_part_abad6d42fe698b1755bdc1f07a582bc23}{\index{Component\-Part@{Component\-Part}!biasi\-\_\-@{biasi\-\_\-}}
+\index{biasi\-\_\-@{biasi\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{biasi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} const$\ast$ Component\-Part\-::biasi\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_abad6d42fe698b1755bdc1f07a582bc23}
+
+
+the bias indices 
+
+\hypertarget{class_component_part_a3251ad22cd72fb9ccf7fe18e597f84a0}{\index{Component\-Part@{Component\-Part}!biasid\-\_\-@{biasid\-\_\-}}
+\index{biasid\-\_\-@{biasid\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{biasid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Di} const$\ast$ Component\-Part\-::biasid\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a3251ad22cd72fb9ccf7fe18e597f84a0}
+
+
+indexing schema for the bias (weights and indices) 
+
+\hypertarget{class_component_part_a361de825869afbad383a5b4ba1fbca31}{\index{Component\-Part@{Component\-Part}!biasw\-\_\-@{biasw\-\_\-}}
+\index{biasw\-\_\-@{biasw\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{biasw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf} const$\ast$ Component\-Part\-::biasw\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a361de825869afbad383a5b4ba1fbca31}
+
+
+the bias weights 
+
+\hypertarget{class_component_part_a814b56fc405db36e4b3a7dd1ffa89f7b}{\index{Component\-Part@{Component\-Part}!defi\-\_\-@{defi\-\_\-}}
+\index{defi\-\_\-@{defi\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{defi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} const$\ast$ Component\-Part\-::defi\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a814b56fc405db36e4b3a7dd1ffa89f7b}
+
+
+the deformation indices 
+
+\hypertarget{class_component_part_ab408f9bd78053f571402b933b56a355c}{\index{Component\-Part@{Component\-Part}!defid\-\_\-@{defid\-\_\-}}
+\index{defid\-\_\-@{defid\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{defid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Di} const$\ast$ Component\-Part\-::defid\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_ab408f9bd78053f571402b933b56a355c}
+
+
+indexing schema for deformation (weights, indices and anchors) 
+
+\hypertarget{class_component_part_a4841935dcac81d3e9c97c95722a44ef8}{\index{Component\-Part@{Component\-Part}!defw\-\_\-@{defw\-\_\-}}
+\index{defw\-\_\-@{defw\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{defw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Df} const$\ast$ Component\-Part\-::defw\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a4841935dcac81d3e9c97c95722a44ef8}
+
+
+the deformation weights 
+
+\hypertarget{class_component_part_aba9023613a7dd450b2403fd7c1e708ec}{\index{Component\-Part@{Component\-Part}!filterid\-\_\-@{filterid\-\_\-}}
+\index{filterid\-\_\-@{filterid\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{filterid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector2\-Di} const$\ast$ Component\-Part\-::filterid\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_aba9023613a7dd450b2403fd7c1e708ec}
+
+
+indexing schema for the filters (weights and indices) 
+
+\hypertarget{class_component_part_ab27e6ea4e7d5b1342ca8b55afa797da9}{\index{Component\-Part@{Component\-Part}!filtersi\-\_\-@{filtersi\-\_\-}}
+\index{filtersi\-\_\-@{filtersi\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{filtersi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} const$\ast$ Component\-Part\-::filtersi\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_ab27e6ea4e7d5b1342ca8b55afa797da9}
+
+
+the filter indices 
+
+\hypertarget{class_component_part_a301c8633b1e8db3f30436c0ba0fc140d}{\index{Component\-Part@{Component\-Part}!filtersw\-\_\-@{filtersw\-\_\-}}
+\index{filtersw\-\_\-@{filtersw\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{filtersw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-Mat} const$\ast$ Component\-Part\-::filtersw\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a301c8633b1e8db3f30436c0ba0fc140d}
+
+
+the filter weights 
+
+\hypertarget{class_component_part_a3c75a843f04e4b3d56e4461f8ef803fa}{\index{Component\-Part@{Component\-Part}!parentid\-\_\-@{parentid\-\_\-}}
+\index{parentid\-\_\-@{parentid\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{parentid\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectori} const$\ast$ Component\-Part\-::parentid\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a3c75a843f04e4b3d56e4461f8ef803fa}
+
+
+indexing schema for the parent (for biasid\-\_\- and filterid\-\_\-) 
+
+\hypertarget{class_component_part_a814391cfc1e60223f270d06e3bf2f8b6}{\index{Component\-Part@{Component\-Part}!self\-\_\-@{self\-\_\-}}
+\index{self\-\_\-@{self\-\_\-}!ComponentPart@{Component\-Part}}
+\subsubsection[{self\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Component\-Part\-::self\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_component_part_a814391cfc1e60223f270d06e3bf2f8b6}
+
+
+the current part index 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_parts_8hpp}{Parts.\-hpp}\end{DoxyCompactItemize}

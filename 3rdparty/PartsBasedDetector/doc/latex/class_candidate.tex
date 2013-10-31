@@ -1,0 +1,332 @@
+\hypertarget{class_candidate}{\section{Candidate Class Reference}
+\label{class_candidate}\index{Candidate@{Candidate}}
+}
+
+
+detection candidate  
+
+
+
+
+{\ttfamily \#include $<$Candidate.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_candidate_aa2747741fb662af5e8f3d01d1d1a43b6}{Candidate} ()
+\item 
+virtual \hyperlink{class_candidate_a644aceddca7fec98820a1f06e2164ba7}{$\sim$\-Candidate} ()
+\item 
+const std\-::vector$<$ cv\-::\-Rect $>$ \& \hyperlink{class_candidate_a117d2717d831d4be51f5f6c907640925}{parts} (void) const 
+\begin{DoxyCompactList}\small\item\em return the vector of parts \end{DoxyCompactList}\item 
+const \hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \& \hyperlink{class_candidate_ac7a17c6ae2755d1efc6d444fbe811c8c}{confidence} (void) const 
+\begin{DoxyCompactList}\small\item\em return the vector of confidence scores \end{DoxyCompactList}\item 
+void \hyperlink{class_candidate_a6f6d27c3922ea79ee59e9dc0674bd4ed}{add\-Part} (cv\-::\-Rect r, float \hyperlink{class_candidate_ac7a17c6ae2755d1efc6d444fbe811c8c}{confidence})
+\begin{DoxyCompactList}\small\item\em add a part score to the candidate, parameterized by a bounding box and confidence value \end{DoxyCompactList}\item 
+float \hyperlink{class_candidate_af2d9d8149e1c19589df4d4a3b5f7e583}{score} (void) const 
+\begin{DoxyCompactList}\small\item\em get the root score of the detection. Using for sorting \end{DoxyCompactList}\item 
+void \hyperlink{class_candidate_afc8eade00ffc0d437dad6702614edc6a}{set\-Score} (float \hyperlink{class_candidate_ac7a17c6ae2755d1efc6d444fbe811c8c}{confidence})
+\begin{DoxyCompactList}\small\item\em set the root score of the detection \end{DoxyCompactList}\item 
+void \hyperlink{class_candidate_a95437deacd9ab3a4dfebac329b77cacd}{set\-Component} (int c)
+\begin{DoxyCompactList}\small\item\em set the candidate component \end{DoxyCompactList}\item 
+int \hyperlink{class_candidate_acf9c39288f0f9bdda71cace191dcfb88}{component} (void)
+\begin{DoxyCompactList}\small\item\em get the candidate component \end{DoxyCompactList}\item 
+void \hyperlink{class_candidate_a2792fab371e105cd88a2b51ba3a0b733}{resize} (const float factor)
+\begin{DoxyCompactList}\small\item\em rescale the parts \end{DoxyCompactList}\item 
+cv\-::\-Rect \hyperlink{class_candidate_a4f185f69e56247b92031142d63b3c998}{bounding\-Box} (void) const 
+\begin{DoxyCompactList}\small\item\em create a single bounding box around the detection taken from the part limit \end{DoxyCompactList}\item 
+cv\-::\-Rect \hyperlink{class_candidate_a9059e09b0e99f622c1e7e82cbb94edf5}{bounding\-Box\-Norm} (void) const 
+\begin{DoxyCompactList}\small\item\em create a single bounding box around the detection from mean and standard deviation \end{DoxyCompactList}\item 
+\hyperlink{_rect3_8hpp_a05172c5a86161981edfe197f57415582}{Rect3d} \hyperlink{class_candidate_aa2144903e2d042709fd7889606b4c069}{bounding\-Box3\-D} (const cv\-::\-Mat \&im, const cv\-::\-Mat \&depth) const 
+\begin{DoxyCompactList}\small\item\em create a single bounding box in 3\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_candidate_a3bd4b38f5afddfa676e03121b135780c}{descending} (\hyperlink{class_candidate}{Candidate} c1, \hyperlink{class_candidate}{Candidate} c2)
+\begin{DoxyCompactList}\small\item\em descending comparison method for ordering objects of type \hyperlink{class_candidate}{Candidate} \end{DoxyCompactList}\item 
+static void \hyperlink{class_candidate_a7e0776d9b8b7496d49f46298e93d0271}{sort} (\hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates)
+\begin{DoxyCompactList}\small\item\em Sort the candidates from best to worst, in place. \end{DoxyCompactList}\item 
+static void \hyperlink{class_candidate_af2765b794cd31148d3a6b40bbc4d733f}{non\-Maxima\-Suppression} (const cv\-::\-Mat \&im, \hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates, const float overlap=0.\-0f)
+\begin{DoxyCompactList}\small\item\em suppress non-\/maximal candidates \end{DoxyCompactList}\item 
+static void \hyperlink{class_candidate_ac68a19185a7bcb0d0076af9634d63407}{mask} (const cv\-::\-Mat \&im, const \hyperlink{types_8hpp_a04eefdf70d6c6b8effb5170271f1db05}{vector\-Candidate} \&candidates, cv\-::\-Mat \&mask)
+\begin{DoxyCompactList}\small\item\em return a masked representation of a set of candidates \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ cv\-::\-Rect $>$ \hyperlink{class_candidate_aa0e3d40adf86bff2e99f3e4234ce674b}{parts\-\_\-}
+\begin{DoxyCompactList}\small\item\em the bounding boxes of the parts \end{DoxyCompactList}\item 
+\hyperlink{types_8hpp_a4da5db3ee9e284f719ef5764dbadffc8}{vectorf} \hyperlink{class_candidate_a31785654c1d01cda9cadf93e919b30f1}{confidence\-\_\-}
+\begin{DoxyCompactList}\small\item\em the confidence scores of the parts \end{DoxyCompactList}\item 
+int \hyperlink{class_candidate_a7866513384d74055891a237a524798ab}{component\-\_\-}
+\begin{DoxyCompactList}\small\item\em the model component the candidate belongs to \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+detection candidate 
+
+\hyperlink{class_candidate}{Candidate} describes a storage class for object detection candidates. A single \hyperlink{class_candidate}{Candidate} represents a detection for a tree of parts. The candidate is parameterized by a cv\-::\-Rect bounding box and detection confidence for each part 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_candidate_aa2747741fb662af5e8f3d01d1d1a43b6}{\index{Candidate@{Candidate}!Candidate@{Candidate}}
+\index{Candidate@{Candidate}!Candidate@{Candidate}}
+\subsubsection[{Candidate}]{\setlength{\rightskip}{0pt plus 5cm}Candidate\-::\-Candidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_aa2747741fb662af5e8f3d01d1d1a43b6}
+\hypertarget{class_candidate_a644aceddca7fec98820a1f06e2164ba7}{\index{Candidate@{Candidate}!$\sim$\-Candidate@{$\sim$\-Candidate}}
+\index{$\sim$\-Candidate@{$\sim$\-Candidate}!Candidate@{Candidate}}
+\subsubsection[{$\sim$\-Candidate}]{\setlength{\rightskip}{0pt plus 5cm}virtual Candidate\-::$\sim$\-Candidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_candidate_a644aceddca7fec98820a1f06e2164ba7}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_candidate_a6f6d27c3922ea79ee59e9dc0674bd4ed}{\index{Candidate@{Candidate}!add\-Part@{add\-Part}}
+\index{add\-Part@{add\-Part}!Candidate@{Candidate}}
+\subsubsection[{add\-Part}]{\setlength{\rightskip}{0pt plus 5cm}void Candidate\-::add\-Part (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Rect}]{r, }
+\item[{float}]{confidence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a6f6d27c3922ea79ee59e9dc0674bd4ed}
+
+
+add a part score to the candidate, parameterized by a bounding box and confidence value 
+
+\hypertarget{class_candidate_a4f185f69e56247b92031142d63b3c998}{\index{Candidate@{Candidate}!bounding\-Box@{bounding\-Box}}
+\index{bounding\-Box@{bounding\-Box}!Candidate@{Candidate}}
+\subsubsection[{bounding\-Box}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Rect Candidate\-::bounding\-Box (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a4f185f69e56247b92031142d63b3c998}
+
+
+create a single bounding box around the detection taken from the part limit 
+
+\begin{DoxyReturn}{Returns}
+a single bounding Rect 
+\end{DoxyReturn}
+\hypertarget{class_candidate_aa2144903e2d042709fd7889606b4c069}{\index{Candidate@{Candidate}!bounding\-Box3\-D@{bounding\-Box3\-D}}
+\index{bounding\-Box3\-D@{bounding\-Box3\-D}!Candidate@{Candidate}}
+\subsubsection[{bounding\-Box3\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect3d} Candidate\-::bounding\-Box3\-D (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const cv\-::\-Mat \&}]{depth}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_aa2144903e2d042709fd7889606b4c069}
+
+
+create a single bounding box in 3\-D 
+
+Given an image, its depth correspondences and a candidate, return an approximate 3\-D bounding box which encapsulates the object 
+\begin{DoxyParams}{Parameters}
+{\em im} & the color image \\
+\hline
+{\em depth} & the depth image (may be of different resolution to the color image) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_candidate_a9059e09b0e99f622c1e7e82cbb94edf5}{\index{Candidate@{Candidate}!bounding\-Box\-Norm@{bounding\-Box\-Norm}}
+\index{bounding\-Box\-Norm@{bounding\-Box\-Norm}!Candidate@{Candidate}}
+\subsubsection[{bounding\-Box\-Norm}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Rect Candidate\-::bounding\-Box\-Norm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a9059e09b0e99f622c1e7e82cbb94edf5}
+
+
+create a single bounding box around the detection from mean and standard deviation 
+
+\begin{DoxyReturn}{Returns}
+a bounding box 
+\end{DoxyReturn}
+\hypertarget{class_candidate_acf9c39288f0f9bdda71cace191dcfb88}{\index{Candidate@{Candidate}!component@{component}}
+\index{component@{component}!Candidate@{Candidate}}
+\subsubsection[{component}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::component (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_acf9c39288f0f9bdda71cace191dcfb88}
+
+
+get the candidate component 
+
+\hypertarget{class_candidate_ac7a17c6ae2755d1efc6d444fbe811c8c}{\index{Candidate@{Candidate}!confidence@{confidence}}
+\index{confidence@{confidence}!Candidate@{Candidate}}
+\subsubsection[{confidence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf vectorf}\& Candidate\-::confidence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_ac7a17c6ae2755d1efc6d444fbe811c8c}
+
+
+return the vector of confidence scores 
+
+\hypertarget{class_candidate_a3bd4b38f5afddfa676e03121b135780c}{\index{Candidate@{Candidate}!descending@{descending}}
+\index{descending@{descending}!Candidate@{Candidate}}
+\subsubsection[{descending}]{\setlength{\rightskip}{0pt plus 5cm}static bool Candidate\-::descending (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c1, }
+\item[{{\bf Candidate}}]{c2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_candidate_a3bd4b38f5afddfa676e03121b135780c}
+
+
+descending comparison method for ordering objects of type \hyperlink{class_candidate}{Candidate} 
+
+\hypertarget{class_candidate_ac68a19185a7bcb0d0076af9634d63407}{\index{Candidate@{Candidate}!mask@{mask}}
+\index{mask@{mask}!Candidate@{Candidate}}
+\subsubsection[{mask}]{\setlength{\rightskip}{0pt plus 5cm}static void Candidate\-::mask (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{const {\bf vector\-Candidate} \&}]{candidates, }
+\item[{cv\-::\-Mat \&}]{mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_candidate_ac68a19185a7bcb0d0076af9634d63407}
+
+
+return a masked representation of a set of candidates 
+
+Given a vector of candidates which have already been non-\/maximally suppressed, return an image mask where zero values represent regions which do not contain objects, and all integer values represent unique object locations.
+
+I.\-e. object\-\_\-7 = (mask == 7) returns a mask where nonzero elements bound the 7th best detection
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & the input image from which the candidates were found \\
+\hline
+{\em candidates} & the vector of candidates \\
+\hline
+{\em mask} & a mask of type C\-V\-\_\-8\-U the same size as im \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_candidate_af2765b794cd31148d3a6b40bbc4d733f}{\index{Candidate@{Candidate}!non\-Maxima\-Suppression@{non\-Maxima\-Suppression}}
+\index{non\-Maxima\-Suppression@{non\-Maxima\-Suppression}!Candidate@{Candidate}}
+\subsubsection[{non\-Maxima\-Suppression}]{\setlength{\rightskip}{0pt plus 5cm}static void Candidate\-::non\-Maxima\-Suppression (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{im, }
+\item[{{\bf vector\-Candidate} \&}]{candidates, }
+\item[{const float}]{overlap = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_candidate_af2765b794cd31148d3a6b40bbc4d733f}
+
+
+suppress non-\/maximal candidates 
+
+Given a vector of candidates, keep only the maximal candidates which overlap less than a defined fractional area. If overlap is 0.\-0 (the default value) no overlap is allowed. If, for example, the overlap is 0.\-2, then two candidates' bounding boxes can intersect by 20\%
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & the input image from which the candidates were found \\
+\hline
+{\em candidates} & the vector of candidates \\
+\hline
+{\em overlap} & the allowable overlap \mbox{[}0.\-0 1.\-0) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_candidate_a117d2717d831d4be51f5f6c907640925}{\index{Candidate@{Candidate}!parts@{parts}}
+\index{parts@{parts}!Candidate@{Candidate}}
+\subsubsection[{parts}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::vector$<$cv\-::\-Rect$>$\& Candidate\-::parts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a117d2717d831d4be51f5f6c907640925}
+
+
+return the vector of parts 
+
+\hypertarget{class_candidate_a2792fab371e105cd88a2b51ba3a0b733}{\index{Candidate@{Candidate}!resize@{resize}}
+\index{resize@{resize}!Candidate@{Candidate}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}void Candidate\-::resize (
+\begin{DoxyParamCaption}
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a2792fab371e105cd88a2b51ba3a0b733}
+
+
+rescale the parts 
+
+\hypertarget{class_candidate_af2d9d8149e1c19589df4d4a3b5f7e583}{\index{Candidate@{Candidate}!score@{score}}
+\index{score@{score}!Candidate@{Candidate}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}float Candidate\-::score (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_af2d9d8149e1c19589df4d4a3b5f7e583}
+
+
+get the root score of the detection. Using for sorting 
+
+\hypertarget{class_candidate_a95437deacd9ab3a4dfebac329b77cacd}{\index{Candidate@{Candidate}!set\-Component@{set\-Component}}
+\index{set\-Component@{set\-Component}!Candidate@{Candidate}}
+\subsubsection[{set\-Component}]{\setlength{\rightskip}{0pt plus 5cm}void Candidate\-::set\-Component (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_a95437deacd9ab3a4dfebac329b77cacd}
+
+
+set the candidate component 
+
+\hypertarget{class_candidate_afc8eade00ffc0d437dad6702614edc6a}{\index{Candidate@{Candidate}!set\-Score@{set\-Score}}
+\index{set\-Score@{set\-Score}!Candidate@{Candidate}}
+\subsubsection[{set\-Score}]{\setlength{\rightskip}{0pt plus 5cm}void Candidate\-::set\-Score (
+\begin{DoxyParamCaption}
+\item[{float}]{confidence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_candidate_afc8eade00ffc0d437dad6702614edc6a}
+
+
+set the root score of the detection 
+
+\hypertarget{class_candidate_a7e0776d9b8b7496d49f46298e93d0271}{\index{Candidate@{Candidate}!sort@{sort}}
+\index{sort@{sort}!Candidate@{Candidate}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}static void Candidate\-::sort (
+\begin{DoxyParamCaption}
+\item[{{\bf vector\-Candidate} \&}]{candidates}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_candidate_a7e0776d9b8b7496d49f46298e93d0271}
+
+
+Sort the candidates from best to worst, in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em candidates} & the vector of candidates to sort \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_candidate_a7866513384d74055891a237a524798ab}{\index{Candidate@{Candidate}!component\-\_\-@{component\-\_\-}}
+\index{component\-\_\-@{component\-\_\-}!Candidate@{Candidate}}
+\subsubsection[{component\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::component\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_candidate_a7866513384d74055891a237a524798ab}
+
+
+the model component the candidate belongs to 
+
+\hypertarget{class_candidate_a31785654c1d01cda9cadf93e919b30f1}{\index{Candidate@{Candidate}!confidence\-\_\-@{confidence\-\_\-}}
+\index{confidence\-\_\-@{confidence\-\_\-}!Candidate@{Candidate}}
+\subsubsection[{confidence\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vectorf} Candidate\-::confidence\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_candidate_a31785654c1d01cda9cadf93e919b30f1}
+
+
+the confidence scores of the parts 
+
+\hypertarget{class_candidate_aa0e3d40adf86bff2e99f3e4234ce674b}{\index{Candidate@{Candidate}!parts\-\_\-@{parts\-\_\-}}
+\index{parts\-\_\-@{parts\-\_\-}!Candidate@{Candidate}}
+\subsubsection[{parts\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$cv\-::\-Rect$>$ Candidate\-::parts\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{class_candidate_aa0e3d40adf86bff2e99f3e4234ce674b}
+
+
+the bounding boxes of the parts 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/m29474/\-Desktop/code/openbr/3rdparty/\-Parts\-Based\-Detector/include/\hyperlink{_candidate_8hpp}{Candidate.\-hpp}\end{DoxyCompactItemize}
