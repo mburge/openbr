@@ -183,35 +183,43 @@ class mtxOutput : public Output
         writeBlock();
     }
 
+    void initialize(const FileList &targetFiles, const FileList &queryFiles)
+    {
+        Output::initialize(targetFiles,queryFiles);
+
+        QFile f(file);
+        QtUtils::touchDir(f);
+        if (!f.open(QFile::WriteOnly))
+            qFatal("Unable to open %s for writing.", qPrintable(file));
+        const int endian = 0x12345678;
+        QByteArray header;
+        header.append("S2\n");
+        header.append(qPrintable(targetFiles.first().get<QString>("Gallery", "Unknown_Target")));
+        header.append("\n");
+        header.append(qPrintable(queryFiles.first().get<QString>("Gallery", "Unknown_Query")));
+        header.append("\nMF ");
+        header.append(qPrintable(QString::number(queryFiles.size())));
+        header.append(" ");
+        header.append(qPrintable(QString::number(targetFiles.size())));
+        header.append(" ");
+        header.append(QByteArray((const char*)&endian, 4));
+        header.append("\n");
+        headerSize = f.write(header);
+        const float defaultValue = -std::numeric_limits<float>::max();
+        for (int i=0; i<targetFiles.size()*queryFiles.size(); i++)
+            f.write((const char*)&defaultValue, 4);
+        f.close();
+
+        this->rowBlock = 0;
+        this->columnBlock = 0;
+        blockScores = cv::Mat(std::min(queryFiles.size(), Globals->blockSize),
+                              std::min(targetFiles.size(), Globals->blockSize),
+                              CV_32FC1);
+    }
+
     void setBlock(int rowBlock, int columnBlock)
     {
-        if ((rowBlock == 0) && (columnBlock == 0)) {
-            // Initialize the file
-            QFile f(file);
-            QtUtils::touchDir(f);
-            if (!f.open(QFile::WriteOnly))
-                qFatal("Unable to open %s for writing.", qPrintable(file));
-            const int endian = 0x12345678;
-            QByteArray header;
-            header.append("S2\n");
-            header.append(qPrintable(targetFiles.first().get<QString>("Gallery", "Unknown_Target")));
-            header.append("\n");
-            header.append(qPrintable(queryFiles.first().get<QString>("Gallery", "Unknown_Query")));
-            header.append("\nMF ");
-            header.append(qPrintable(QString::number(queryFiles.size())));
-            header.append(" ");
-            header.append(qPrintable(QString::number(targetFiles.size())));
-            header.append(" ");
-            header.append(QByteArray((const char*)&endian, 4));
-            header.append("\n");
-            headerSize = f.write(header);
-            const float defaultValue = -std::numeric_limits<float>::max();
-            for (int i=0; i<targetFiles.size()*queryFiles.size(); i++)
-                f.write((const char*)&defaultValue, 4);
-            f.close();
-        } else {
-            writeBlock();
-        }
+        writeBlock();
 
         this->rowBlock = rowBlock;
         this->columnBlock = columnBlock;

@@ -421,17 +421,61 @@ void br::Convert(const File &fileType, const File &inputFile, const File &output
     }
 }
 
-void br::Cat(const QStringList &inputGalleries, const QString &outputGallery)
+void br::Cat(const File &fileType, const QStringList &inputFiles, const File &outputFile)
 {
-    qDebug("Concatenating %d galleries to %s", inputGalleries.size(), qPrintable(outputGallery));
-    foreach (const QString &inputGallery, inputGalleries)
-        if (inputGallery == outputGallery)
-            qFatal("outputGallery must not be in inputGalleries.");
-    QScopedPointer<Gallery> og(Gallery::make(outputGallery));
-    foreach (const QString &inputGallery, inputGalleries) {
-        QScopedPointer<Gallery> ig(Gallery::make(inputGallery));
-        bool done = false;
-        while (!done) og->writeBlock(ig->readBlock(&done));
+    qDebug("Concatenating %d %s files to %s", inputFiles.size(), qPrintable(fileType.flat()), qPrintable(outputFile.flat()));
+
+    if (fileType == "Gallery") {
+        foreach (const QString &inputFile, inputFiles)
+            if (inputFile == outputFile)
+                qFatal("outputFile must not be in inputFiles.");
+
+        QScopedPointer<Gallery> og(Gallery::make(outputFile));
+        foreach (const QString &inputGallery, inputFiles) {
+            QScopedPointer<Gallery> ig(Gallery::make(inputGallery));
+            bool done = false;
+            while (!done) og->writeBlock(ig->readBlock(&done));
+        }
+    } else if (fileType == "Output") {
+        const QString catType = outputFile.get<QString>("catType");
+
+        // Concatonate to the first simmat
+        QStringList intputSimmats = inputFiles;
+        QString target, query;
+        cv::Mat catSimmat = BEE::readSimmat(intputSimmats[0], &target, &query);
+        intputSimmats.removeFirst();
+
+        FileList targetFiles(TemplateList::fromGallery(target).files());
+        FileList queryFiles(TemplateList::fromGallery(query).files());
+
+        foreach (const QString &inputSimmat, intputSimmats) {
+            cv::Mat m = BEE::readSimmat(inputSimmat, &target, &query);
+            const FileList targets = TemplateList::fromGallery(target).files();
+            const FileList queries = TemplateList::fromGallery(query).files();
+
+            if (targets.size() != m.cols || queries.size() != m.rows)
+                qFatal("Similarity matrix (%i, %i) and file size (%i, %i) mismatch.", m.rows, m.cols, queries.size(), targets.size());
+
+            // All matrices need to be doing the same thing
+            if (catType == "colWise" /*We're trying to add more target comparisons for the same queries*/) {
+                targetFiles.append(targets);
+                cv::hconcat(catSimmat, m, catSimmat);
+            } else if (catType == "rowWise" /*We're trying to add more query comparisons for the same targets*/) {
+                queryFiles.append(queries);
+                cv::vconcat(catSimmat, m, catSimmat);
+            } else {
+                qFatal("Unsupported concatonation type.");
+            }
+        }
+
+        QSharedPointer<Output> o(Factory<Output>::make(outputFile));
+        o->initialize(targetFiles, queryFiles);
+
+        for (int i=0; i<queryFiles.size(); i++)
+            for (int j=0; j<targetFiles.size(); j++)
+                o->setRelative(catSimmat.at<float>(i,j), i, j);
+    } else {
+        qFatal("Unrecognized file type %s.", qPrintable(fileType.flat()));
     }
 }
 

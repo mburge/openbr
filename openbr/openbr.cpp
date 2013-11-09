@@ -33,9 +33,11 @@ const char *br_about()
     return about.data();
 }
 
-void br_cat(int num_input_galleries, const char *input_galleries[], const char *output_gallery)
+void br_cat(int num_input_files, const char *file_type, const char *input_files[], const char *output_file)
 {
-    Cat(QtUtils::toStringList(num_input_galleries, input_galleries), output_gallery);
+    QStringList inputFiles = QtUtils::toStringList(num_input_files, input_files);
+    inputFiles.removeFirst();
+    Cat(File(file_type), inputFiles, File(output_file));
 }
 
 void br_cluster(int num_simmats, const char *simmats[], float aggressiveness, const char *csv)

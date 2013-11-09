@@ -1343,7 +1343,7 @@ BR_EXPORT void Convert(const File &fileType, const File &inputFile, const File &
  * \param outputGallery Gallery to store the concatenated result.
  * \note outputGallery must not be in inputGalleries.
  */
-BR_EXPORT void Cat(const QStringList &inputGalleries, const QString &outputGallery);
+BR_EXPORT void Cat(const File &fileType, const QStringList &inputFiles, const File &outputFile);
 
 /*! @}*/
 

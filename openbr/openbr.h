@@ -64,7 +64,7 @@ BR_EXPORT const char *br_about();
 /*!
  * \brief Wraps br::Cat()
  */
-BR_EXPORT void br_cat(int num_input_galleries, const char *input_galleries[], const char *output_gallery);
+BR_EXPORT void br_cat(int num_input_files, const char *file_type, const char *input_files[], const char *output_file);
 
 /*!
  * \brief Clusters one or more similarity matrices into a list of subjects.

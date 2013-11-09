@@ -123,8 +123,8 @@ public:
                 check(parc >= 4, "Insufficient parameter count for 'combineMasks'.");
                 br_combine_masks(parc-2, parv, parv[parc-2], parv[parc-1]);
             } else if (!strcmp(fun, "cat")) {
-                check(parc >= 2, "Insufficient parameter count for 'cat'.");
-                br_cat(parc-1, parv, parv[parc-1]);
+                check(parc >= 4, "Insufficient parameter count for 'cat'.");
+                br_cat(parc-1, parv[0], parv, parv[parc-1]);
             } else if (!strcmp(fun, "convert")) {
                 check(parc == 3, "Incorrect parameter count for 'convert'.");
                 br_convert(parv[0], parv[1], parv[2]);
