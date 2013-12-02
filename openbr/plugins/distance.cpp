@@ -62,7 +62,6 @@ private:
             (a.m().type() != b.m().type()))
                 return -std::numeric_limits<float>::max();
 
-// TODO: this max value is never returned based on the switch / default 
         float result = std::numeric_limits<float>::max();
         switch (metric) {
           case Correlation:
