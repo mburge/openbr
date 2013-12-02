@@ -40,3 +40,6 @@ scripts/results
 data/INRIAPerson/sigset
 data/KTH/sigset
 
+## ios ###
+*.framework
+
