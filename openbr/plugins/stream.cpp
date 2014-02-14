@@ -354,12 +354,8 @@ public:
         readText(24, nextTwentyFour);
         if (firstFour[0] != (char)0xED || firstFour[1] != (char)0xFE || strncmp(nextTwentyFour, "Norpix seq", 10) != 0) {
             qDebug("Invalid header in seq file");
-            delete [] firstFour;
-            delete [] nextTwentyFour;
             return false;
         }
-        delete [] firstFour;
-        delete [] nextTwentyFour;
 
         // next 8 bytes for version (skipped below) and header size (1024), then 512 for descr
         seqFile.seekg(4, ios::cur);
