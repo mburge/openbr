@@ -422,7 +422,6 @@ public:
                         s += 8;
                         extra += 8;
                     }
-                    delete [] zero;
                 }
             }
             // raw images are all the same size
